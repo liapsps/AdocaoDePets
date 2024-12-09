@@ -1,29 +1,34 @@
-# :checkered_flag: NOME DO PROJETO
+# 🗓️ Agenda Diária de Estudos
 
-Breve descrição do que o seu projeto faz.
+Essa aplicação vai servir como registro e planejamento de estudos, ajudando os estudantes a organizarem seus horários e tarefas diariamente, oferecendo ferramentas como lista de tarefas, com opção para kanban view e cronograma de aulas, além de possuir registros e estatísticas de tempo de estudo para cada matéria, monitorando o progresso.
 
 ## :technologist: Membros da equipe
 
-Matrícula, nome e curso dos participantes.
+- 569565, Ana Julia Chaves, Engenharia de Software
+- 542086, Janaina Macário de Sousa, Sistemas de Informação
 
 ## :bulb: Objetivo Geral
-Descrever o objetivo de geral do projeto
+Facilitar o planejamento e acompanhamento dos estudos, promovendo uma gestão eficiente do tempo e organização das tarefas diárias dos estudantes.
 
 ## :eyes: Público-Alvo
-Público-alvo do projeto
+Estudantes de qualquer nível educacional que desejam melhorar sua organização e gestão de tempo.
 
 ## :star2: Impacto Esperado
-Descreva o impacto esperado do projeto em relação ao público alvo
+Melhorar a organização dos estudos, aumentar a produtividade e ajudar os estudantes a alcançarem suas metas acadêmicas de maneira eficiente.
 
 ## :people_holding_hands: Papéis ou tipos de usuário da aplicação
 
-Informe aqui os tipos de usuário que irão interagir com a aplicação. Ex: administrador, locador, locatario, usuário não logado.
+Usuário Estudante: Acessa todas as funcionalidades, incluindo login, cronômetro de estudo, lista de tarefas, calendário de aulas e personalização da agenda.
 
 > Tenha em mente que obrigatoriamente a aplicação deve possuir funcionalidades acessíveis a todos os tipos de usuário e outra funcionalidades restritas a certos tipos de usuários.
 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
 
-Descreve ou liste brevemente as principais funcionalidades da aplicação que será desenvolvida. Destaque a funcionalidades que serão acessévies a todos os usuários e aquelas restriras a usuários logados.
+- Login/Cadastro de Usuário
+- Cronômetro de Estudo (com personalização para Pomodoro)
+- Visão de Lista ou Kanban para Tarefas
+- Calendário de Aulas
+- Modo Claro e Escuro
 
 ## :spiral_calendar: Entidades ou tabelas do sistema
 
