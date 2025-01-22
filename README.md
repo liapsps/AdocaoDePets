@@ -49,12 +49,12 @@ Promover a adoção responsável, aumentar a taxa de adoção e reduzir o abando
 - React.js
 - TailwindCSS
 - Axios
-
+  
 **Backend:**
 
 - Node.js
 - Express.js
-- MongoDB
+- PostgreSQL
 
 ## :shipit: Operações implementadas para cada entidade da aplicação
 
