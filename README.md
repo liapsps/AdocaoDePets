@@ -21,7 +21,6 @@ Promover a adoção responsável, aumentar a taxa de adoção e reduzir o abando
 - **Usuário Adotante:** Pode navegar pelo catálogo de animais, registrar interesse em adoção e acessar informações sobre o processo.
 - **Administrador:** Responsável por gerenciar o cadastro de animais, validar interesse de adotantes e monitorar a plataforma.
 
-> Tenha em mente que obrigatoriamente a aplicação deve possuir funcionalidades acessíveis a todos os tipos de usuário e outra funcionalidades restritas a certos tipos de usuários.
 
 ## :triangular_flag_on_post: Principais funcionalidades da aplicação
 
@@ -65,7 +64,6 @@ Promover a adoção responsável, aumentar a taxa de adoção e reduzir o abando
 | Animal           | X       | X       | X           | X       |
 | Interesse        | X       | X       |             | X       |
 
-> Lembre-se que é necessário implementar o CRUD de pelo menos duas entidades.
 
 ## :neckbeard: Rotas da API REST utilizadas
 
