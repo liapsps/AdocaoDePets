@@ -1,4 +1,4 @@
-# 🐾 Site de Adoção de Animais
+# 🐾 Pet Lar (Site de Adoção de Animais)
 
 Essa aplicação serve como um portal para conectar pessoas interessadas em adotar animais de estimação com abrigos e ONGs que possuem animais disponíveis para adoção. A plataforma oferece ferramentas para cadastro de animais, busca por filtros e registro de interesse na adoção.
 
