@@ -1,0 +1,277 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Corpo e fontes */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+  }
+
+  /* Cabeçalho */
+  header {
+    background-color: #3D66CC;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header img {
+    height: 50px;
+  }
+
+  nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #f4f4f4;
+  }
+
+  /* Seção de Introdução */
+  #intro {
+    display: flex;
+    padding: 40px 60px;
+    background-color: #f4f4f4;
+    align-items: center;
+  }
+
+  #intro .intro-content {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .pet-image-container {
+    margin-left: 20px;
+  }
+
+  .pet-image {
+    width: 460px;
+    height: 500px;
+    border-radius: 20%; /* Faz a imagem circular */
+    /* Removendo a borda */
+    border: none;
+    object-fit: cover; /* Ajusta a imagem para preencher o círculo */
+  }
+
+  #intro h1 {
+    color: #3D66CC;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  #intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  #intro .highlight {
+    color: #F25E6B;
+    font-weight: 600;
+  }
+
+  #intro button {
+    font-size: 16px; /* Define o tamanho da fonte como 16px */
+    background-color: #3D66CC ; /* Azul */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+
+  #intro button:hover {
+      background-color: #1F5794; /* Azul mais escuro */
+  }
+
+  /* Títulos em azul */
+  h1, h2 {
+    color: #3D66CC;
+  }
+
+  /* Subtítulos em preto */
+  h3, h4, h5, h6, p {
+    color: #333;
+  }
+
+  /* Estilo para a seção Sobre */
+  #sobre {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  #sobre h2 {
+    color: #3D66CC;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .about-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .about-text {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-video {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-video iframe {
+    border-radius: 8px;
+  }
+
+  /* Seção de Pets Disponíveis */
+  #pets-disponiveis {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+  }
+
+  #pets-disponiveis h2 {
+    color: #3D66CC;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  #pets-disponiveis p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  #pets-disponiveis .cta-button {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    background-color: #3D66CC;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+
+  #pets-disponiveis .cta-button:hover {
+    background-color: #2a4d91;
+  }
+
+  /* Seções de Benefícios e Contato */
+  #beneficios, #contato {
+    padding: 40px 20px;
+    background-color: #f4f4f4; /* Cor de fundo igual ao fundo da página */
+  }
+
+  #beneficios h2, #contato h2 {
+    color: #3D66CC;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  #beneficios .benefits {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  #beneficios .benefit {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  #beneficios .benefit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Formulário de Contato */
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  form input, form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  form button {
+    padding: 10px;
+    background-color: #3D66CC;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+
+  form button:hover {
+    background-color: #2a4d91;
+  }
+
+  footer {
+    background-color: #3D66CC;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  footer p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  footer a:hover {
+    color: #f4f4f4;
+  }
