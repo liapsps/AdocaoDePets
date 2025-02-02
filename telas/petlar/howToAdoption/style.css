@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+  }
+  
+  .logo-container img {
+    height: 50px;
+  }
+  
+  .logo-container .site-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #ffffff; 
+  }
+
+header {
+    background-color: #2C7ABC; 
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 50px;
+}
+
+nav a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f4f4f4; 
+}
+
+.hero {
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    color: #3D66CC;
+    text-align: center;
+}
+
+.hero-text {
+    max-width: 50%; 
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #626060;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero .hero-image {
+    max-width: 20%; 
+    height: auto;
+    border-radius: 50%; 
+    object-fit: cover; 
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f4f4f4; 
+}
+
+.step {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.step h2 {
+    color: #3D66CC;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.step p {
+    color: #555;
+}
+
+.cta {
+    text-align: center;
+    background-color: #3D66CC;
+    color: #fff;
+    padding: 30px 20px;
+    margin-top: 20px;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta .btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #3D66CC;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta .btn:hover {
+    background-color: #f1f1f1;
+}
+
+footer {
+    background-color: #3D66CC;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+footer p {
+    color: white;
+    margin: 0;
+}

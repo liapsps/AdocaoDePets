@@ -6,7 +6,7 @@ body {
   }
   
   header {
-    background-color: #3D66CC;
+    background-color: #2C7ABC;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -48,7 +48,7 @@ body {
   }
   
   .detalhes-info h1 {
-    color: #3D66CC;
+    color: #2C7ABC;
   }
   
   .detalhes-info p {
@@ -64,7 +64,7 @@ body {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 15px;
-    background-color: #3D66CC;
+    background-color: #2C7ABC;
     color: white;
     border: none;
     border-radius: 5px;
@@ -74,6 +74,29 @@ body {
   }
   
   .adotar-button:hover {
-    background-color: #31579a;
+    background-color: #2C7ABC;
   }
   
+  footer {
+    background-color: #2C7ABC;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  footer p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  footer a:hover {
+    color: #f4f4f4;
+  }

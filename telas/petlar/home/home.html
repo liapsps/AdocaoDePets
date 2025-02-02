@@ -9,9 +9,17 @@
       
   </head>
   <body>
-    <!-- Cabeçalho -->
     <header>
       <img src="assets/logo1.jpeg" alt="Logo PetLar" id="logo">
+      <div class="header-left">
+        <div class="logo-container">
+        </div>
+        <nav>
+          <a href="#entrar">Entrar</a>
+          <a href="#cadastrar">Cadastrar</a>
+        </nav>
+      </div>
+
       <nav>
         <a href="../pets/listPets/pets.html">Pets Disponíveis</a>
         <a href="#sobre">Sobre</a>
@@ -20,21 +28,19 @@
       </nav>
     </header>
 
-    <!-- Seção de Introdução -->
     <section id="intro">
       <div class="intro-content">
         <h1>Encontre Seu Novo Amigo</h1>
         <p>Adote um pet e descubra a <span class="highlight">alegria</span> de ter um novo
           <br>membro na sua família. Nós facilitamos o processo
           <br>de adoção e promovemos o bem-estar dos animais.</p>
-        <button onclick="window.location.href='#beneficios'">Quero saber como funciona!</button>
+          <a href="../howToAdoption/adoption.html" class="cta-button">Quero saber como funciona!</a>
       </div>
       <div class="pet-image-container">
         <img src="assets/image.jpeg" alt="Pet em adoção" class="pet-image">
       </div>
     </section>
 
-    <!-- Seção Sobre -->
     <section id="sobre">
         <h2>Sobre o PetLar</h2>
         <div class="about-content">
@@ -45,7 +51,6 @@
         </div>
     </section>
 
-    <!-- Seção de Benefícios -->
     <section id="beneficios" class="beneficios-section">
       <h2>Benefícios da Adoção</h2>
       <div class="benefits">
@@ -64,7 +69,6 @@
       </div>
     </section>
 
-    <!-- Seção de Contato -->  
     <section id="contato">
       <h2>Entre em Contato</h2>
       <p style="text-align: center;">Tem dúvidas ou deseja mais informações? Entre em contato conosco!</p><br>
@@ -76,7 +80,6 @@
       </form>
     </section>
 
-    <!-- Rodapé -->
     <footer>
       <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
       <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
