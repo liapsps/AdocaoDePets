@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Adoção - PetLar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <img src="../home/assets/logo1.jpeg" alt="Logo PetLar" id="logo">
+    <div class="header-left">
+      <div class="logo-container">
+      </div>
+      <nav>
+        <a href="#entrar">Entrar</a>
+        <a href="#cadastrar">Cadastrar</a>
+      </nav>
+    </div>
+    <nav>
+      <a href="../howToAdoption/adoption.html">Como Adotar</a>
+      <a href="../pets/listPets/pets.html">Pets Disponíveis</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="adocao">
+      <h2>Formulário de Adoção</h2>
+      <form action="adoption_action" method="post">
+        <div class="form-group">
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+          <label for="idade">Idade</label>
+          <input type="number" id="idade" name="idade" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" required>
+        </div>
+        <div class="form-group">
+          <label for="endereco">Endereço</label>
+          <input type="text" id="endereco" name="endereco" required>
+        </div>
+        <div class="form-group">
+          <label for="pet">Pet que deseja adotar</label>
+          <select id="pet" name="pet" required>
+            <option value="">Selecione</option>
+            <option value="cachorro">Cachorro</option>
+            <option value="gato">Gato</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="mensagem">Por que você deseja adotar?</label>
+          <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+        </div>
+        <button type="submit">Enviar Solicitação</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
+    <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
+  </footer>
+</body>
+</html>

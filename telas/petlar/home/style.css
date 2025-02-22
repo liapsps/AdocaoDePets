@@ -61,11 +61,11 @@
       background-color: #2C7ABC;
   }
 
-    .pet-image-container {
+    .home-logo-container {
       margin-left: 20px;
     }
 
-    .pet-image {
+    .home-logo {
       width: 460px;
       height: 500px;
       border-radius: 20%; 

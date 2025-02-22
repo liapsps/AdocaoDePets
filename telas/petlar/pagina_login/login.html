@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - PetLar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <img src="../home/assets/logo1.jpeg" alt="Logo PetLar" id="logo">
+    <div class="header-left">
+      <div class="logo-container">
+      </div>
+      <nav>
+        <a href="#entrar">Entrar</a>
+        <a href="#cadastrar">Cadastrar</a>
+      </nav>
+    </div>
+  
+    <nav>
+      <a href="../howToAdoption/adoption.html">Como Adotar</a>
+      <a href="../pets/listPets/pets.html">Pets Disponíveis</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+  
+
+  <main>
+    <section id="login">
+      <h2>Login</h2>
+      <form action="login_action" method="post">
+        <div class="form-group">
+          <label for="username">Usuário</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
+    <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
+  </footer>
+</body>
+</html>

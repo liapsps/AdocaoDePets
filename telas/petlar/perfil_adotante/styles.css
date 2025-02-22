@@ -1,0 +1,152 @@
+/* Estilos Globais */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Cabeçalho */
+  header {
+    background-color: #2C7ABC;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header img {
+    height: 50px;
+  }
+  
+  nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #f4f4f4;
+  }
+  
+  /* Perfil Section */
+  #perfil {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  #perfil h2 {
+    text-align: center;
+    color: #2C7ABC;
+    margin-bottom: 30px;
+  }
+  
+  .perfil-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .perfil-info {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .perfil-info img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  
+  .perfil-info h3 {
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .perfil-info p {
+    margin: 5px 0;
+  }
+  
+  .btn-editar {
+    background-color: #2C7ABC;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-editar:hover {
+    background-color: #1E5C8A;
+  }
+  
+  .perfil-detalhes {
+    flex: 2;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .perfil-detalhes h3 {
+    color: #2C7ABC;
+    margin-bottom: 15px;
+  }
+  
+  .lista-pets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+  
+  .lista-pets li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .lista-pets img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .perfil-detalhes p {
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Rodapé */
+  footer {
+    background-color: #2C7ABC;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  footer a:hover {
+    color: #f4f4f4;
+  }
+  

@@ -1,0 +1,110 @@
+/* Estilos Globais */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #333;
+    margin: 0;
+    padding: 0; 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  /* Cabeçalho */
+  header {
+    background-color: #2C7ABC;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header img {
+    height: 50px;
+  }
+  
+  nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #f4f4f4;
+  }
+  
+  #cadastro {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #cadastro h2 {
+    color: #2C7ABC;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2C7ABC;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background-color: #1B5A8A;
+  }
+  
+   /* Rodapé */
+   footer {
+    background-color: #2C7ABC;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 60px;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  footer a:hover {
+    color: #f4f4f4;
+  }
