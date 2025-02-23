@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solicitacao_de_adocaos",
+  "info": {
+    "singularName": "solicitacao-de-adocao",
+    "pluralName": "solicitacao-de-adocaos",
+    "displayName": "Solicitação de Adoção",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "statusdeadocao": {
+      "type": "enumeration",
+      "enum": [
+        "Pendente",
+        "Aprovado",
+        "Negado"
+      ]
+    },
+    "mensagem": {
+      "type": "text"
+    },
+    "datadesolicitacao": {
+      "type": "date"
+    },
+    "nomecompleto": {
+      "type": "string"
+    },
+    "idade": {
+      "required": true,
+      "min": 18,
+      "type": "integer"
+    },
+    "email": {
+      "type": "email"
+    },
+    "telefone": {
+      "type": "string"
+    },
+    "endereco": {
+      "type": "text"
+    },
+    "petquedesejaadotar": {
+      "type": "enumeration",
+      "enum": [
+        "Selecione",
+        "Cachorro",
+        "Gato",
+        "Outro"
+      ]
+    },
+    "porqueadotar": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
