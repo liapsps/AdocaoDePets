@@ -8,32 +8,32 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-  }
- 
-  header {
+}
+
+header {
     background-color: #2C7ABC;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  header img {
+}
+header img {
     height: 50px;
-  }
-  
-  nav a {
+}
+
+nav a {
     color: #fff;
     margin: 0 15px;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
-  }
-  
-  nav a:hover {
+}
+
+nav a:hover {
     color: #f4f4f4;
-  }
-  
-  #adocao {
+}
+
+#editar-perfil {
     padding: 20px;
     max-width: 600px;
     margin: 50px auto;
@@ -41,35 +41,60 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     flex-grow: 1;
-  }
-  
-  #adocao h2 {
+}
+
+#editar-perfil h2 {
     color: #2C7ABC;
     margin-bottom: 20px;
     text-align: center;
-  }
-  
-  .form-group {
+}
+
+.form-group {
     margin-bottom: 15px;
-  }
-  
-  .form-group label {
+}
+
+.form-group label {
     display: block;
     margin-bottom: 5px;
     color: #333;
-  }
-  
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
-  
-  button {
+}
+
+.input-imagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-imagem input[type="file"] {
+    display: none;
+}
+
+.input-imagem label {
+    background-color: #2C7ABC;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.input-imagem img {
+    max-width: 150px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+button {
     width: 100%;
     padding: 10px 15px;
     background-color: #2C7ABC;
@@ -79,33 +104,33 @@ body {
     cursor: pointer;
     font-weight: bold;
     text-align: center;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #1E5C8A;
-  }
-  
-  footer {
+}
+
+/* Rodapé */
+footer {
     background-color: #2C7ABC;
     color: white;
     padding: 15px 0;
     text-align: center;
     margin-top: 60px;
-  }
-  
-  footer p {
+}
+
+footer p {
     margin: 0;
     font-size: 1rem;
-  }
-  
-  footer a {
+}
+
+footer a {
     color: white;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
-  }
-  
-  footer a:hover {
+}
+
+footer a:hover {
     color: #f4f4f4;
-  }
-  
+}

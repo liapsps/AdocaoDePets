@@ -1,4 +1,4 @@
-/* Estilos Globais */
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #fff;
@@ -10,7 +10,6 @@ body {
     height: 100%;
   }
   
-  /* Cabeçalho */
   header {
     background-color: #2C7ABC;
     padding: 15px 20px;
@@ -34,7 +33,6 @@ body {
     color: #f4f4f4;
   }
   
-  /* Login Section */
   #login {
     padding: 20px;
     max-width: 400px;
@@ -69,7 +67,6 @@ body {
     box-sizing: border-box;
   }
   
-  /* Botão de Login */
   button {
     width: 100%;
     padding: 10px 15px;
@@ -86,7 +83,7 @@ body {
     background-color: #1E5C8A;
   }
   
-  /* Rodapé */
+
   footer {
     background-color: #2C7ABC;
     color: white;

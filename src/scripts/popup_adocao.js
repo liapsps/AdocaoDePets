@@ -1,22 +1,14 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
 
-    const modal = document.getElementById("myModal");
+  if (!form) {
+      console.error("Formulário não encontrado!");
+      return;
+  }
 
-    const btn = document.getElementById("myBtn");
-
-    const closeBtns = document.querySelectorAll(".close");
-
-    btn.onclick = function () {
-      modal.style.display = "block";
-    };
-
-    closeBtns.forEach((btn) => {
-      btn.onclick = function () {
-        modal.style.display = "none";
-      };
-    });
-
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
+  form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Perfil alterado com sucesso!");
+      form.reset(); 
+  });
+});

@@ -1,4 +1,4 @@
-/* Estilos Globais */
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #fff;
@@ -10,7 +10,7 @@ body {
     height: 100%;
   }
   
-  /* Cabeçalho */
+
   header {
     background-color: #2C7ABC;
     padding: 15px 20px;
@@ -84,7 +84,6 @@ body {
     background-color: #1B5A8A;
   }
   
-   /* Rodapé */
    footer {
     background-color: #2C7ABC;
     color: white;
