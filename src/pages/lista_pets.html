@@ -16,70 +16,34 @@
       <a href="../pages/cadastrar.html">Cadastrar-se</a>
     </nav>
   </header>
+  
   <main>
     <section id="pets">
       <h2>Pets Disponíveis</h2>
+      
+      <!-- Filtros -->
+      <div id="filters">
+        <label for="filter-name">Nome:</label>
+        <select id="filter-name">
+          <option value="">Todos</option>
+        </select>
+
+        <label for="filter-species">Espécie:</label>
+        <select id="filter-species">
+          <option value="">Todas</option>
+        </select>
+
+        <label for="filter-size">Tamanho:</label>
+        <select id="filter-size">
+          <option value="">Todos</option>
+        </select>
+
+        <button id="filter-search">Buscar</button>
+        <button id="filter-clear">Limpar</button>
+      </div>
+
       <div class="pet-grid">
-        <div class="pet-card">
-          <img src="../assets/pet1.jpg" alt="Buddy" />
-          <div class="pet-card-content">
-            <h3>Buddy</h3>
-            <p>Espécie: Cachorro</p>
-            <p>Tamanho: M</p>
-            <p>Descrição: Um amigão para toda a vida!</p>
-            <a href="../pages/detalhes_pet/buddy.html" class="info-button">Mais Informações</a>
-          </div>
-        </div>
-        <div class="pet-card">
-          <img src="../assets/pet2.jpg" alt="Mittens" />
-          <div class="pet-card-content">
-            <h3>Mittens</h3>
-            <p>Espécie: Gato</p>
-            <p>Tamanho: M</p>
-            <p>Descrição: Adora um carinho!</p>
-            <a href="../pages/detalhes_pet/mittens.html" class="info-button">Mais Informações</a>
-          </div>
-        </div>
-        <div class="pet-card">
-          <img src="../assets/pet3.jpg" alt="Charlie" />
-          <div class="pet-card-content">
-            <h3>Charlie</h3>
-            <p>Espécie: Cachorro</p>
-            <p>Tamanho: G</p>
-            <p>Descrição: Energia para brincar!</p>
-            <a href="../pages/detalhes_pet/charlie.html" class="info-button">Mais Informações</a>
-          </div>
-        </div>
-        <div class="pet-card">
-          <img src="../assets/pet4.webp" alt="Max" />
-          <div class="pet-card-content">
-            <h3>Max</h3>
-            <p>Espécie: Cachorro</p>
-            <p>Tamanho: P</p>
-            <p>Descrição: Muito amoroso, adora caminhadas!</p>
-            <a href="../pages/detalhes_pet/max.html" class="info-button">Mais Informações</a>
-          </div>
-        </div>
-        <div class="pet-card">
-          <img src="../assets/pet5.jpg" alt="Luna" />
-          <div class="pet-card-content">
-            <h3>Luna</h3>
-            <p>Espécie: Gato</p>
-            <p>Tamanho: P</p>
-            <p>Descrição: Brincalhona, adora explorar!</p>
-            <a href="../pages/detalhes_pet/luna.html" class="info-button">Mais Informações</a>
-          </div>
-        </div>
-        <div class="pet-card">
-          <img src="../assets/pet6.webp" alt="Simba" />
-          <div class="pet-card-content">
-            <h3>Simba</h3>
-            <p>Espécie: Gato</p>
-            <p>Tamanho: M</p>
-            <p>Descrição: Amigável demais, ideal para família!</p>
-            <a href="../pages/detalhes_pet/simba.html" class="info-button">Mais Informações</a>
-          </div>
-        </div>
+        <!-- Os pets serão exibidos aqui -->
       </div>
     </section>
   </main>
@@ -88,6 +52,7 @@
     <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
     <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
   </footer> 
-  
+
+  <script src="../scripts/lista_pets.js"></script>
 </body>
 </html>

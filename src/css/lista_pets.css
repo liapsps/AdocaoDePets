@@ -1,99 +1,142 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    color: #333;
-  }
-  header {
-    background-color: #2C7ABC;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  header img#logo {
-    height: 50px;
-  }
-  header nav a {
-    margin: 0 15px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  .pet-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    padding: 20px;
-  }
-  .pet-card {
-    width: 100%;
-    max-width: 364px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  .pet-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  .pet-card-content {
-    padding: 10px;
-  }
-  .pet-card h3 {
-    margin: 0;
-    font-size: 1.2em;
-  }
-  .pet-card p {
-    margin: 5px 0;
-    color: #555;
-  }
-  .info-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 12px;
-    background-color: #2C7ABC;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  .info-button:hover {
-    background-color: #2C7ABC;
-  }
-  h2 {
-    text-align: center;
-    color: #3D66CC;
-  }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+header {
+  background-color: #2C7ABC;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header img#logo {
+  height: 50px;
+}
+header nav a {
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-  footer {
-    background-color: #2C7ABC;
-    color: white;
-    padding: 15px 0;
-    text-align: center;
-    margin-top: 40px;
-  }
+#filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; 
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 100%;
+}
 
-  footer p {
-    margin: 0;
-    font-size: 1rem;
-  }
+#filters label {
+  font-weight: bold;
+}
 
-  footer a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-  }
+#filter-name, #filter-species, #filter-size {
+  width: 180px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+}
 
-  footer a:hover {
-    color: #f4f4f4;
-  }
-  
+#filter-search, #filter-clear {
+  width: 140px;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  border: 2px solid #2196f3;
+  background-color: transparent;
+  color: #2196f3;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#filter-search:hover, #filter-clear:hover {
+  background-color: #2196f3;
+  color: #fff;
+}
+
+.pet-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 20px;
+}
+.pet-card {
+  width: 100%;
+  max-width: 364px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.pet-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.pet-card-content {
+  padding: 10px;
+}
+.pet-card h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+.pet-card p {
+  margin: 5px 0;
+  color: #555;
+}
+.info-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #2C7ABC;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+.info-button:hover {
+  background-color: #2C7ABC;
+}
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+footer {
+  background-color: #2C7ABC;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #f4f4f4;
+}
