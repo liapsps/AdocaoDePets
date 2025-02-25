@@ -1,63 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editar Perfil - PetLar</title>
-  <link rel="stylesheet" href="../css/editar_perfil.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
-<body>
-  <header>
-    <img src="../assets/logo.jpeg" alt="Logo PetLar" id="logo">
-    <div class="header-left">
-      <div class="logo-container"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Perfil - PetLar</title>
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/editar_perfil.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script src="../js/auth.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="../assets/logo.jpeg" alt="Logo PetLar" id="logo" />
+        <a href="entrar.html">Entrar</a>
+      </div>
       <nav>
-        <a href="../pages/entrar.html">Entrar</a>
-        <a href="../pages/cadastrar.html">Cadastrar</a>
+        <a href="home.html">Home</a>
+        <a href="como_adotar.html">Como Adotar</a>
+        <a href="lista_pets.html">Pets Disponíveis</a>
+        <a href="formulario_adocao.html">Formulário de Adoção</a>
+        <a href="cadastro_animais.html">Cadastro de Animais</a>
+        <button id="logout-button" onclick="logout()" style="display: none">
+          Sair
+        </button>
       </nav>
-    </div>
+    </header>
 
-    <nav>
-      <a href="../pages/como_adotar.html">Como Adotar</a>
-      <a href="../pages/lista_pets.html">Pets Disponíveis</a>
-    </nav>
-  </header>
+    <main>
+      <section id="editar-perfil">
+        <h2>Editar Perfil</h2>
+        <form id="editProfileForm">
+          <div class="form-group">
+            <label for="fullname">Nome Completo</label>
+            <input type="text" id="fullname" name="fullname" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="username">Usuário</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Digite sua nova senha (opcional)"
+            />
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirme a Senha</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              placeholder="Repita sua nova senha (opcional)"
+            />
+          </div>
+          <button id="saveButton" type="button">Salvar Alterações</button>
+        </form>
+      </section>
+    </main>
 
-  <main>
-    <section id="editar-perfil">
-      <h2>Editar Perfil</h2>
-      <form id="editProfileForm">
-        <div class="form-group">
-          <label for="fullname">Nome Completo</label>
-          <input type="text" id="fullname" name="fullname" required>
-        </div>
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="username">Usuário</label>
-          <input type="text" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-          <label for="password">Senha</label>
-          <input type="password" id="password" name="password" placeholder="Digite sua nova senha (opcional)">
-        </div>
-        <div class="form-group">
-          <label for="confirm-password">Confirme a Senha</label>
-          <input type="password" id="confirm-password" name="confirm-password" placeholder="Repita sua nova senha (opcional)">
-        </div>
-        <button id="saveButton" type="button">Salvar Alterações</button>
-      </form>
-    </section>
-  </main>
+    <footer>
+      <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
+      <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
+    </footer>
 
-  <footer>
-    <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
-    <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
-  </footer>
-
-  <script src="../scripts/editar_perfil.js"></script>
-</body>
+    <script src="../scripts/editar_perfil.js"></script>
+  </body>
 </html>

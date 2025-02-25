@@ -1,51 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - PetLar</title>
-  <link rel="stylesheet" href="../css/entrar.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
-<body>
-  <header>
-    <img src="../assets/logo.jpeg" alt="Logo PetLar" id="logo">
-    <div class="header-left">
-      <div class="logo-container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - PetLar</title>
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/entrar.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/axiosConfig.js"></script>
+    <script src="../js/login.js" defer></script>
+    <script src="../js/auth.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="../assets/logo.jpeg" alt="Logo PetLar" id="logo" />
+        <a href="entrar.html">Entrar</a>
       </div>
       <nav>
-        <a href="../pages/entrar.html">Entrar</a>
-        <a href="../pages/cadastrar.html">Cadastrar</a>
+        <a href="home.html">Home</a>
+        <a href="como_adotar.html">Como Adotar</a>
+        <a href="lista_pets.html">Pets Disponíveis</a>
+        <a href="formulario_adocao.html">Formulário de Adoção</a>
+        <a href="cadastro_animais.html">Cadastro de Animais</a>
+        <button id="logout-button" onclick="logout()" style="display: none">
+          Sair
+        </button>
       </nav>
-    </div>
-  
-    <nav>
-      <a href="../pages/como_adotar.html">Como Adotar</a>
-      <a href="../pages/lista_pets.html">Pets Disponíveis</a>
-    </nav>
-  </header>
-  
+    </header>
 
-  <main>
-    <section id="login">
-      <h2>Login</h2>
-      <form action="login_action" method="post">
-        <div class="form-group">
-          <label for="username">Usuário</label>
-          <input type="text" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-          <label for="password">Senha</label>
-          <input type="password" id="password" name="password" required>
-        </div>
-        <a href="../pages/perfil_adotante.html"></a><button type="submit">Entrar</button></a>
-      </form>
-    </section>
-  </main>
+    <main>
+      <section id="login">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label for="username">Usuário</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <button type="submit">Entrar</button>
+        </form>
+      </section>
+    </main>
 
-  <footer>
-    <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
-    <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
-  </footer>
-</body>
+    <footer>
+      <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
+      <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
+    </footer>
+  </body>
 </html>

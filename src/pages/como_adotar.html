@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Como Adotar - PetLar</title>
-    <link rel="stylesheet" href="../css/como_adotar.css">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/como_adotar.css" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../js/auth.js" defer></script>
   </head>
   <body>
     <header>
-      <div class="logo-container">
-        <img src="../assets/logo.jpeg" alt="Logo PetLar" id="logo">
+      <div class="header-left">
+        <img src="../assets/logo.jpeg" alt="Logo PetLar" id="logo" />
+        <a href="entrar.html">Entrar</a>
       </div>
       <nav>
-        <a href="../pages/home.html">Home</a>
-        <a href="../pages/entrar.html">Entrar</a>
-        <a href="../pages/cadastrar.html">Cadastrar</a>
+        <a href="home.html">Home</a>
+        <a href="como_adotar.html">Como Adotar</a>
+        <a href="lista_pets.html">Pets Disponíveis</a>
+        <a href="formulario_adocao.html">Formulário de Adoção</a>
+        <a href="cadastro_animais.html">Cadastro de Animais</a>
+        <button id="logout-button" onclick="logout()" style="display: none">
+          Sair
+        </button>
       </nav>
     </header>
 
@@ -24,42 +35,67 @@
       <section class="hero">
         <div class="hero-text">
           <h1>Como Adotar Seu Novo Amigo</h1>
-          <br><p>Adotar é simples! Siga os passos abaixo e venha conhecer seu futuro companheiro de aventuras.</p>
+          <br />
+          <p>
+            Adotar é simples! Siga os passos abaixo e venha conhecer seu futuro
+            companheiro de aventuras.
+          </p>
         </div>
-        <img src="../assets/como_adotar.jpg" alt="Adotar um pet" class="hero-image">
+        <img
+          src="../assets/como_adotar.jpg"
+          alt="Adotar um pet"
+          class="hero-image"
+        />
       </section>
 
       <section class="steps">
         <div class="step">
           <h2>1. Escolha seu Pet</h2>
-          <br><p>Explore nossa lista de animais disponíveis e escolha aquele que mais combina com você.</p>
+          <br />
+          <p>
+            Explore nossa lista de animais disponíveis e escolha aquele que mais
+            combina com você.
+          </p>
         </div>
 
         <div class="step">
           <h2>2. Preencha o Formulário</h2>
-          <p>Preencha nosso formulário de adoção com suas informações e preferências.</p>
+          <p>
+            Preencha nosso formulário de adoção com suas informações e
+            preferências.
+          </p>
         </div>
 
         <div class="step">
           <h2>3. Aguarde o Contato</h2>
-          <br><p>Nossa equipe analisará sua aplicação e entrará em contato para os próximos passos.</p>
+          <br />
+          <p>
+            Nossa equipe analisará sua aplicação e entrará em contato para os
+            próximos passos.
+          </p>
         </div>
 
         <div class="step">
           <h2>4. Encontre Seu Novo Amigo</h2>
-          <p>Depois de aprovado, venha conhecer seu novo companheiro e finalize a adoção.</p>
+          <p>
+            Depois de aprovado, venha conhecer seu novo companheiro e finalize a
+            adoção.
+          </p>
         </div>
       </section>
 
       <section class="cta">
-        <p>Adotar é um gesto de amor. Dê um lar para quem mais precisa e ganhe um amigo fiel para toda a vida.</p>
+        <p>
+          Adotar é um gesto de amor. Dê um lar para quem mais precisa e ganhe um
+          amigo fiel para toda a vida.
+        </p>
         <a href="../pages/lista_pets.html " class="btn">Ver Pets Disponíveis</a>
       </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
-        <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
-      </footer>
+      <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
+      <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
+    </footer>
   </body>
 </html>
