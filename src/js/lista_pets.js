@@ -32,14 +32,14 @@ document.addEventListener("DOMContentLoaded", function () {
   async function fetchPets() { // Função para buscar pets da API
     try {
       const response = await api.get( // Fazer uma solicitação GET para a API
-        "/content-manager/collection-types/api::cadastro-de-pet.cadastro-de-pet"
+        "/api/cadastro-de-pets"
       );
 
       // Extrair pets do novo formato de resposta
-      const petsData = response.data.results || [];
+      const petsData = response.data || [];
 
       // Filtrar apenas pets publicados
-      allPets = petsData.filter((pet) => pet.status === "published");
+      allPets = petsData.data;
 
       // Preencher os filtros de espécies e tamanhos
       populateFilterOptions();

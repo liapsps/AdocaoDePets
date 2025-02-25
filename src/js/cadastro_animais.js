@@ -31,23 +31,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Preparar os dados para envio
       const petData = {
-        foto: null,
         idade: parseInt(idade),
-        locale: null,
-        localizations: [],
         raca: especie,
         sexo: sexo,
         tamanho: tamanho,
-        saude: saude,
         descricao: descricao,
-        status: "published",
       };
 
       // Enviar dados para a API Strapi
-      const responsePet = await api.post(
-        "/content-manager/collection-types/api::cadastro-de-pet.cadastro-de-pet/actions/publish?",
-        petData
-      );
+      const responsePet = await api.post("/api/cadastro-de-pets", {
+        data: petData
+      });
 
       // Limpar o formulário e mostrar mensagem de sucesso
       formCadastroPet.reset();
