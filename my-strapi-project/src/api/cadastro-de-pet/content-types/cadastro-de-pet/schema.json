@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cadastro_de_pets",
+  "info": {
+    "singularName": "cadastro-de-pet",
+    "pluralName": "cadastro-de-pets",
+    "displayName": "Cadastro de Pet",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "idade": {
+      "type": "integer"
+    },
+    "raca": {
+      "type": "enumeration",
+      "enum": [
+        "Selecione",
+        "Cachorro",
+        "Gato",
+        "Outro"
+      ]
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tamanho": {
+      "type": "enumeration",
+      "enum": [
+        "Pequeno",
+        "Medio",
+        "Grande"
+      ]
+    },
+    "sexo": {
+      "type": "enumeration",
+      "enum": [
+        "Macho",
+        "Femea"
+      ]
+    },
+    "descricao": {
+      "type": "blocks"
+    }
+  }
+}

@@ -1,18 +1,19 @@
-/* module.exports = [
-  'strapi::security',
+module.exports = [
+  "strapi::errors",
+  "strapi::security",
   {
-    name: 'strapi::cors',
+    name: "strapi::cors",
     config: {
       enabled: true,
-      origin: '*', // posso especificar um domínio aqui se quiser restringir
-      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+      origin: "*", // posso especificar um domínio aqui se quiser restringir
+      methods: ["GET", "POST", "PUT", "DELETE"],
     },
   },
-  'strapi::poweredBy',
-  'strapi::logger',
-  'strapi::query',
-  'strapi::body',
-  'strapi::session',
-  'strapi::favicon',
-  'strapi::public',
-]; */
+  "strapi::poweredBy",
+  "strapi::logger",
+  "strapi::query",
+  "strapi::body",
+  "strapi::session",
+  "strapi::favicon",
+  "strapi::public",
+];
