@@ -1,5 +1,3 @@
-// O backend vai criar um card em html para cada pet cadastrado na API
-// O frontend vai exibir os cards dos pets na página de lista de pets
 document.addEventListener("DOMContentLoaded", function () {
   // Elementos da interface
   const petGrid = document.querySelector(".pet-grid");
@@ -29,9 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Buscar pets da API
-  async function fetchPets() { // Função para buscar pets da API
+  async function fetchPets() {
     try {
-      const response = await api.get( // Fazer uma solicitação GET para a API
+      const response = await api.get(
         "/content-manager/collection-types/api::cadastro-de-pet.cadastro-de-pet"
       );
 
