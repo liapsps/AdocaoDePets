@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PetLar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/home.css">
-      
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+    <script src="../js/auth.js" defer></script>
   </head>
   <body>
     <header>
-      <img src="../assets/logo.jpeg" alt="Logo PetLar" id="logo">
       <div class="header-left">
-        <div class="logo-container">
-        </div>
-        <nav>
-          <a href="../pages/entrar.html">Entrar</a>
-          <a href="../pages/cadastrar.html">Cadastrar</a>
-        </nav>
+        <img src="../assets/logo.jpeg" alt="Logo PetLar" id="logo" />
+        <a href="entrar.html">Entrar</a>
       </div>
-
       <nav>
-        <a href="../pages/como_adotar.html">Como Adotar</a>
-        <a href="../pages/lista_pets.html">Pets Disponíveis</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#beneficios">Benefícios</a>
-        <a href="#contato">Contato</a>
+        <a href="home.html">Home</a>
+        <a href="como_adotar.html">Como Adotar</a>
+        <a href="lista_pets.html">Pets Disponíveis</a>
+        <a href="formulario_adocao.html">Formulário de Adoção</a>
+        <a href="cadastro_animais.html">Cadastro de Animais</a>
+        <button id="logout-button" onclick="logout()" style="display: none">
+          Sair
+        </button>
       </nav>
     </header>
 
@@ -33,60 +34,93 @@
       <div class="intro-content">
         <h1 id="typewriter"></h1>
 
-        <p>Adote um pet e descubra a <span class="highlight">alegria</span> de ter um novo
-          <br>membro na sua família. Nós facilitamos o processo
-          <br>de adoção e promovemos o bem-estar dos animais.</p>
-          <a href="../howToAdoption/adoption.html" class="cta-button">Quero saber como funciona!</a>
+        <p>
+          Adote um pet e descubra a <span class="highlight">alegria</span> de
+          ter um novo <br />membro na sua família. Nós facilitamos o processo
+          <br />de adoção e promovemos o bem-estar dos animais.
+        </p>
+        <a href="../howToAdoption/adoption.html" class="cta-button"
+          >Quero saber como funciona!</a
+        >
       </div>
       <div class="home-logo-container">
-        <img src="../assets/home.jpeg" alt="Imagem Ilustrativa" class="home-logo">
+        <img
+          src="../assets/home.jpeg"
+          alt="Imagem Ilustrativa"
+          class="home-logo"
+        />
       </div>
     </section>
 
     <section id="sobre">
-        <h2>Sobre o PetLar</h2>
-        <div class="about-content">
+      <h2>Sobre o PetLar</h2>
+      <div class="about-content">
         <div class="about-text">
-            <p>O PetLar é uma plataforma que conecta pessoas interessadas em adotar animais de estimação com aqueles que precisam encontrar novos lares para seus pets. Nosso objetivo é tornar o processo de adoção simples, seguro e eficiente, promovendo o bem-estar dos animais e a conscientização sobre a importância da adoção responsável.</p>
-            <p>Ao adotar no PetLar, você não só ganha um amigo fiel, mas também contribui para a redução do abandono de animais.</p>
+          <p>
+            O PetLar é uma plataforma que conecta pessoas interessadas em adotar
+            animais de estimação com aqueles que precisam encontrar novos lares
+            para seus pets. Nosso objetivo é tornar o processo de adoção
+            simples, seguro e eficiente, promovendo o bem-estar dos animais e a
+            conscientização sobre a importância da adoção responsável.
+          </p>
+          <p>
+            Ao adotar no PetLar, você não só ganha um amigo fiel, mas também
+            contribui para a redução do abandono de animais.
+          </p>
         </div>
-        </div>
+      </div>
     </section>
 
     <section id="beneficios" class="beneficios-section">
       <h2>Benefícios da Adoção</h2>
       <div class="benefits">
         <div class="benefit">
-          <h3>Amor e Companhia</h3><br>
-          <p>Os pets se tornam verdadeiros membros da família, sendo uma companhia para todos os dias.</p>
+          <h3>Amor e Companhia</h3>
+          <br />
+          <p>
+            Os pets se tornam verdadeiros membros da família, sendo uma
+            companhia para todos os dias.
+          </p>
         </div>
         <div class="benefit">
-          <h3>Combate ao Abandono</h3><br>
-          <p>Ao adotar, você contribui para a redução do abandono de animais, ajudando a proporcionar uma segunda chance para muitos que estão em abrigos.</p>
+          <h3>Combate ao Abandono</h3>
+          <br />
+          <p>
+            Ao adotar, você contribui para a redução do abandono de animais,
+            ajudando a proporcionar uma segunda chance para muitos que estão em
+            abrigos.
+          </p>
         </div>
         <div class="benefit">
-          <h3>Saúde e Bem-estar</h3><br>
-          <p>Estudos mostram que ter um pet pode reduzir os níveis de estresse e ansiedade, além de incentivar a prática de atividades físicas. </p>
+          <h3>Saúde e Bem-estar</h3>
+          <br />
+          <p>
+            Estudos mostram que ter um pet pode reduzir os níveis de estresse e
+            ansiedade, além de incentivar a prática de atividades físicas.
+          </p>
         </div>
       </div>
     </section>
 
     <section id="contato">
       <h2>Entre em Contato</h2>
-      <p style="text-align: center;">Tem dúvidas ou deseja mais informações? Entre em contato conosco!</p><br>
+      <p style="text-align: center">
+        Tem dúvidas ou deseja mais informações? Entre em contato conosco!
+      </p>
+      <br />
       <form>
-        <input type="text" placeholder="Seu Nome" required>
-        <input type="email" placeholder="Seu Email" required>
+        <input type="text" placeholder="Seu Nome" required />
+        <input type="email" placeholder="Seu Email" required />
         <textarea placeholder="Sua Mensagem" required></textarea>
         <button type="submit">Enviar</button>
       </form>
     </section>
-    
+
     <footer>
       <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
       <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
     </footer>
-  
+
     <script src="../scripts/home.js"></script>
   </body>
 </html>

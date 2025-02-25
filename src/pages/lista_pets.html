@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PetLar</title>
-  <link rel="stylesheet" href="../css/lista_pets.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-</head>
-<body>
-  <header>
-    <img src="../assets/logo.jpeg" alt="Logo SysAdoção" id="logo">
-    <nav>
-      <a href="../pages/home.html">Home</a>
-      <a href="../pages/entrar.html">Entrar</a>
-      <a href="../pages/cadastrar.html">Cadastrar-se</a>
-    </nav>
-  </header>
-  
-  <main>
-    <section id="pets">
-      <h2>Pets Disponíveis</h2>
-      
-      <!-- Filtros -->
-      <div id="filters">
-        <label for="filter-name">Nome:</label>
-        <select id="filter-name">
-          <option value="">Todos</option>
-        </select>
-
-        <label for="filter-species">Espécie:</label>
-        <select id="filter-species">
-          <option value="">Todas</option>
-        </select>
-
-        <label for="filter-size">Tamanho:</label>
-        <select id="filter-size">
-          <option value="">Todos</option>
-        </select>
-
-        <button id="filter-search">Buscar</button>
-        <button id="filter-clear">Limpar</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetLar</title>
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/lista_pets.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/axiosConfig.js"></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/lista_pets.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="../assets/logo.jpeg" alt="Logo PetLar" id="logo" />
+        <a href="entrar.html">Entrar</a>
       </div>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="como_adotar.html">Como Adotar</a>
+        <a href="lista_pets.html">Pets Disponíveis</a>
+        <a href="formulario_adocao.html">Formulário de Adoção</a>
+        <a href="cadastro_animais.html">Cadastro de Animais</a>
+        <button id="logout-button" onclick="logout()" style="display: none">
+          Sair
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section id="pets">
+        <h2>Pets Disponíveis</h2>
 
-      <div class="pet-grid">
-        <!-- Os pets serão exibidos aqui -->
-      </div>
-    </section>
-  </main>
+        <!-- Filtros -->
+        <div id="filters">
+          <label for="filter-name">Nome:</label>
+          <select id="filter-name">
+            <option value="">Todos</option>
+          </select>
 
-  <footer>
-    <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
-    <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
-  </footer> 
+          <label for="filter-species">Espécie:</label>
+          <select id="filter-species">
+            <option value="">Todas</option>
+          </select>
 
-  <script src="../scripts/lista_pets.js"></script>
-</body>
+          <label for="filter-size">Tamanho:</label>
+          <select id="filter-size">
+            <option value="">Todos</option>
+          </select>
+
+          <button id="filter-search">Buscar</button>
+          <button id="filter-clear">Limpar</button>
+        </div>
+
+        <div class="pet-grid">
+          <!-- Os pets serão exibidos aqui -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
+      <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
+    </footer>
+  </body>
 </html>
