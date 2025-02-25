@@ -1,4 +1,5 @@
-function updateAuthUI() {
+// Arquivo responsável por fazer a validação e alteração da interface do usuário com base no status de autenticação
+function updateAuthUI() { 
   const token = localStorage.getItem("jwt");
   const isLoggedIn = !!token;
 
