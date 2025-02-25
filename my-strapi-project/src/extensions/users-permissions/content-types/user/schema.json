@@ -67,6 +67,9 @@
     },
     "nomecompleto": {
       "type": "string"
+    },
+    "isAdmin": {
+      "type": "boolean"
     }
   }
 }
