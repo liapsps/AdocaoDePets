@@ -369,6 +369,43 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCadastroDePetCadastroDePet
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'cadastro_de_pets';
+  info: {
+    description: '';
+    displayName: 'Cadastro de Pet';
+    pluralName: 'cadastro-de-pets';
+    singularName: 'cadastro-de-pet';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descricao: Schema.Attribute.Blocks;
+    foto: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    idade: Schema.Attribute.Integer;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cadastro-de-pet.cadastro-de-pet'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    raca: Schema.Attribute.Enumeration<
+      ['Selecione', 'Cachorro', 'Gato', 'Outro']
+    >;
+    sexo: Schema.Attribute.Enumeration<['Macho', 'Femea']>;
+    tamanho: Schema.Attribute.Enumeration<['Pequeno', 'Medio', 'Grande']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSolicitacaoDeAdocaoSolicitacaoDeAdocao
   extends Struct.CollectionTypeSchema {
   collectionName: 'solicitacao_de_adocaos';
@@ -891,6 +928,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    isAdmin: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -932,6 +970,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::cadastro-de-pet.cadastro-de-pet': ApiCadastroDePetCadastroDePet;
       'api::solicitacao-de-adocao.solicitacao-de-adocao': ApiSolicitacaoDeAdocaoSolicitacaoDeAdocao;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
