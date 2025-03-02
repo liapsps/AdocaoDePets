@@ -66,6 +66,24 @@ button:hover {
   background-color: #1e5c8a;
 }
 
+.cadastro-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.cadastro-link a {
+  color: #2c7abc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.cadastro-link a:hover {
+  color: #1e5c8a;
+}
+
 footer {
   background-color: #2c7abc;
   color: white;
