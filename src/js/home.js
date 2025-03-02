@@ -28,3 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
     form.reset();
   });
 });
+
+function logout() {
+  localStorage.removeItem("jwt");
+  localStorage.removeItem("username");
+  localStorage.removeItem("nomeCompleto");
+  localStorage.removeItem("endereco");
+  localStorage.removeItem("telefone");
+  localStorage.removeItem("id");
+  localStorage.removeItem("role");
+  window.location.href = "entrar.html";
+}

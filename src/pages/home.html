@@ -123,5 +123,14 @@
     </footer>
 
     <script src="../scripts/home.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const token = localStorage.getItem("jwt");
+        const logoutButton = document.getElementById("logout-button");
+        if (token) {
+          logoutButton.style.display = "inline-block";
+        }
+      });
+    </script>
   </body>
 </html>
