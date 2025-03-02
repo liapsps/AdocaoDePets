@@ -40,16 +40,15 @@ document.addEventListener("DOMContentLoaded", function () {
         porqueadotar: mensagem,
         nomecompleto: nome,
         telefone: telefone,
-        tipoPet: pet,
-        usuario: userData.id, // Relaciona com o usuário logado
-        status: "published",
-        publishedAt: new Date().toISOString(),
+        user: userData.id, // Relaciona com o usuário logado
       };
 
       // Enviar dados para a API Strapi
       const response = await api.post(
-        "/content-manager/collection-types/api::solicitacao-de-adocao.solicitacao-de-adocao/actions/publish?",
-        adocaoData
+        "/api/solicitacao-de-adocaos", {
+          data: adocaoData
+        }
+        
       );
 
       // Limpar o formulário e mostrar mensagem de sucesso
