@@ -68,12 +68,6 @@
     "nomeCompleto": {
       "type": "string"
     },
-    "cadastro_de_pets": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::cadastro-de-pet.cadastro-de-pet",
-      "mappedBy": "user"
-    },
     "telefone": {
       "type": "string"
     },
@@ -85,6 +79,12 @@
       "relation": "oneToMany",
       "target": "api::solicitacao-de-adocao.solicitacao-de-adocao",
       "mappedBy": "adotante"
+    },
+    "pets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pet.pet",
+      "mappedBy": "users_permissions_user"
     }
   }
 }

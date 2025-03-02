@@ -1,29 +1,30 @@
 {
   "kind": "collectionType",
-  "collectionName": "cadastro_de_pets",
+  "collectionName": "pets",
   "info": {
-    "singularName": "cadastro-de-pet",
-    "pluralName": "cadastro-de-pets",
-    "displayName": "Pet",
-    "description": ""
+    "singularName": "pet",
+    "pluralName": "pets",
+    "displayName": "Pet"
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
+    "nome": {
+      "type": "string"
+    },
     "idade": {
       "type": "integer"
     },
     "foto": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
     "tamanho": {
       "type": "enumeration",
@@ -40,26 +41,23 @@
         "Fêmea"
       ]
     },
-    "user": {
+    "raca": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "text"
+    },
+    "users_permissions_user": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "cadastro_de_pets"
+      "inversedBy": "pets"
     },
     "solicitacao_de_adocao": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::solicitacao-de-adocao.solicitacao-de-adocao",
-      "mappedBy": "pet"
-    },
-    "raca": {
-      "type": "string"
-    },
-    "nome": {
-      "type": "string"
-    },
-    "descricao": {
-      "type": "text"
+      "inversedBy": "pet"
     },
     "categoria": {
       "type": "relation",

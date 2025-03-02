@@ -16,7 +16,7 @@
     "pets": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::cadastro-de-pet.cadastro-de-pet",
+      "target": "api::pet.pet",
       "mappedBy": "categoria"
     }
   }
