@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciar Pets</title>
+    <link rel="stylesheet" href="../css/gerenciar_pets.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/axiosConfig.js" defer></script>
+    <script src="../js/gerenciar_pets.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <a href="home.html">
+          <img src="../assets/logo.jpeg" alt="Logo PetLar" id="logo" />
+        </a>
+        <a href="entrar.html" class="nav-link">Entrar</a>
+      </div>
+      <nav>
+        <a href="como_adotar.html">Como Adotar</a>
+        <a href="lista_pets.html">Pets Disponíveis</a>
+        <a href="formulario_adocao.html">Formulário de Adoção</a>
+        <a href="cadastro_animais.html">Cadastro de Animais</a>
+        <button id="logout-button" onclick="logout()" style="display: none">
+          Sair
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section id="gerenciar">
+        <h2>Gerenciar Pets</h2>
+        <button
+          id="add-pet"
+          onclick="window.location.href='cadastro_animais.html'"
+        >
+          Adicionar Pet
+        </button>
+        <div class="pet-grid" id="pet-list">
+          <!-- Lista de pets será carregada aqui -->
+          <div class="pet-card">
+            <img src="../../assets/pet1.jpg" alt="Buddy" class="pet-image" />
+            <h3 class="pet-name">Buddy</h3>
+            <p class="pet-raca">Raça: Cachorro</p>
+            <p class="pet-tamanho">Tamanho: M</p>
+            <p class="pet-idade">Idade: 3 anos</p>
+            <p class="pet-sexo">Sexo: Macho</p>
+            <p class="pet-descricao">
+              Buddy é um cão amigável que adora brincar. Ele ama passeios ao ar
+              livre e se dá bem com outros cães. Perfeito para famílias que
+              procuram um pet ativo e carinhoso.
+            </p>
+            <button class="edit-pet">Editar</button>
+            <button class="delete-pet">Excluir</button>
+          </div>
+          <!-- Adicione mais divs de pets conforme necessário -->
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
+      <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
+    </footer>
+  </body>
+</html>
