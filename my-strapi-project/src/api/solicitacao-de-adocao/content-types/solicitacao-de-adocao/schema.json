@@ -11,54 +11,28 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "user": {
+    "pet": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
+      "target": "api::cadastro-de-pet.cadastro-de-pet",
+      "inversedBy": "solicitacao_de_adocao"
     },
-    "statusdeadocao": {
+    "adotante": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "solicitacao_de_adocaos"
+    },
+    "justificativa": {
+      "type": "text"
+    },
+    "situacao": {
       "type": "enumeration",
       "enum": [
+        "Recusado",
         "Pendente",
-        "Aprovado",
-        "Negado"
+        "Confirmado"
       ]
-    },
-    "mensagem": {
-      "type": "text"
-    },
-    "datadesolicitacao": {
-      "type": "date"
-    },
-    "nomecompleto": {
-      "type": "string"
-    },
-    "idade": {
-      "required": true,
-      "min": 18,
-      "type": "integer"
-    },
-    "email": {
-      "type": "email"
-    },
-    "telefone": {
-      "type": "string"
-    },
-    "endereco": {
-      "type": "text"
-    },
-    "petquedesejaadotar": {
-      "type": "enumeration",
-      "enum": [
-        "Selecione",
-        "Cachorro",
-        "Gato",
-        "Outro"
-      ]
-    },
-    "porqueadotar": {
-      "type": "text",
-      "required": true
     }
   }
 }

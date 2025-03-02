@@ -65,11 +65,26 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "nomecompleto": {
+    "nomeCompleto": {
       "type": "string"
     },
-    "isAdmin": {
-      "type": "boolean"
+    "cadastro_de_pets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cadastro-de-pet.cadastro-de-pet",
+      "mappedBy": "user"
+    },
+    "telefone": {
+      "type": "string"
+    },
+    "endereco": {
+      "type": "text"
+    },
+    "solicitacao_de_adocaos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::solicitacao-de-adocao.solicitacao-de-adocao",
+      "mappedBy": "adotante"
     }
   }
 }

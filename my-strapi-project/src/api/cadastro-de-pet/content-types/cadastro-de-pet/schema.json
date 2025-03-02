@@ -4,7 +4,7 @@
   "info": {
     "singularName": "cadastro-de-pet",
     "pluralName": "cadastro-de-pets",
-    "displayName": "Cadastro de Pet",
+    "displayName": "Pet",
     "description": ""
   },
   "options": {
@@ -13,15 +13,6 @@
   "attributes": {
     "idade": {
       "type": "integer"
-    },
-    "raca": {
-      "type": "enumeration",
-      "enum": [
-        "Selecione",
-        "Cachorro",
-        "Gato",
-        "Outro"
-      ]
     },
     "foto": {
       "type": "media",
@@ -38,7 +29,7 @@
       "type": "enumeration",
       "enum": [
         "Pequeno",
-        "Medio",
+        "Médio",
         "Grande"
       ]
     },
@@ -46,11 +37,35 @@
       "type": "enumeration",
       "enum": [
         "Macho",
-        "Femea"
+        "Fêmea"
       ]
     },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "cadastro_de_pets"
+    },
+    "solicitacao_de_adocao": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::solicitacao-de-adocao.solicitacao-de-adocao",
+      "mappedBy": "pet"
+    },
+    "raca": {
+      "type": "string"
+    },
+    "nome": {
+      "type": "string"
+    },
     "descricao": {
-      "type": "blocks"
+      "type": "text"
+    },
+    "categoria": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::categoria.categoria",
+      "inversedBy": "pets"
     }
   }
 }

@@ -374,7 +374,7 @@ export interface ApiCadastroDePetCadastroDePet
   collectionName: 'cadastro_de_pets';
   info: {
     description: '';
-    displayName: 'Cadastro de Pet';
+    displayName: 'Pet';
     pluralName: 'cadastro-de-pets';
     singularName: 'cadastro-de-pet';
   };
@@ -382,10 +382,14 @@ export interface ApiCadastroDePetCadastroDePet
     draftAndPublish: true;
   };
   attributes: {
+    categoria: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::categoria.categoria'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    descricao: Schema.Attribute.Blocks;
+    descricao: Schema.Attribute.Text;
     foto: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     idade: Schema.Attribute.Integer;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -394,12 +398,51 @@ export interface ApiCadastroDePetCadastroDePet
       'api::cadastro-de-pet.cadastro-de-pet'
     > &
       Schema.Attribute.Private;
+    nome: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    raca: Schema.Attribute.Enumeration<
-      ['Selecione', 'Cachorro', 'Gato', 'Outro']
+    raca: Schema.Attribute.String;
+    sexo: Schema.Attribute.Enumeration<['Macho', 'F\u00EAmea']>;
+    solicitacao_de_adocao: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::solicitacao-de-adocao.solicitacao-de-adocao'
     >;
-    sexo: Schema.Attribute.Enumeration<['Macho', 'Femea']>;
-    tamanho: Schema.Attribute.Enumeration<['Pequeno', 'Medio', 'Grande']>;
+    tamanho: Schema.Attribute.Enumeration<['Pequeno', 'M\u00E9dio', 'Grande']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
+export interface ApiCategoriaCategoria extends Struct.CollectionTypeSchema {
+  collectionName: 'categorias';
+  info: {
+    displayName: 'Categoria';
+    pluralName: 'categorias';
+    singularName: 'categoria';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::categoria.categoria'
+    > &
+      Schema.Attribute.Private;
+    nome: Schema.Attribute.String;
+    pets: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cadastro-de-pet.cadastro-de-pet'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -419,44 +462,31 @@ export interface ApiSolicitacaoDeAdocaoSolicitacaoDeAdocao
     draftAndPublish: true;
   };
   attributes: {
+    adotante: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    datadesolicitacao: Schema.Attribute.Date;
-    email: Schema.Attribute.Email;
-    endereco: Schema.Attribute.Text;
-    idade: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMax<
-        {
-          min: 18;
-        },
-        number
-      >;
+    justificativa: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::solicitacao-de-adocao.solicitacao-de-adocao'
     > &
       Schema.Attribute.Private;
-    mensagem: Schema.Attribute.Text;
-    nomecompleto: Schema.Attribute.String;
-    petquedesejaadotar: Schema.Attribute.Enumeration<
-      ['Selecione', 'Cachorro', 'Gato', 'Outro']
+    pet: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::cadastro-de-pet.cadastro-de-pet'
     >;
-    porqueadotar: Schema.Attribute.Text & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    statusdeadocao: Schema.Attribute.Enumeration<
-      ['Pendente', 'Aprovado', 'Negado']
+    situacao: Schema.Attribute.Enumeration<
+      ['Recusado', 'Pendente', 'Confirmado']
     >;
-    telefone: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    user: Schema.Attribute.Relation<
-      'oneToOne',
-      'plugin::users-permissions.user'
-    >;
   };
 }
 
@@ -918,6 +948,10 @@ export interface PluginUsersPermissionsUser
   };
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    cadastro_de_pets: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cadastro-de-pet.cadastro-de-pet'
+    >;
     confirmationToken: Schema.Attribute.String & Schema.Attribute.Private;
     confirmed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
@@ -928,14 +962,14 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
-    isAdmin: Schema.Attribute.Boolean;
+    endereco: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'plugin::users-permissions.user'
     > &
       Schema.Attribute.Private;
-    nomecompleto: Schema.Attribute.String;
+    nomeCompleto: Schema.Attribute.String;
     password: Schema.Attribute.Password &
       Schema.Attribute.Private &
       Schema.Attribute.SetMinMaxLength<{
@@ -948,6 +982,11 @@ export interface PluginUsersPermissionsUser
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    solicitacao_de_adocaos: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::solicitacao-de-adocao.solicitacao-de-adocao'
+    >;
+    telefone: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -971,6 +1010,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::cadastro-de-pet.cadastro-de-pet': ApiCadastroDePetCadastroDePet;
+      'api::categoria.categoria': ApiCategoriaCategoria;
       'api::solicitacao-de-adocao.solicitacao-de-adocao': ApiSolicitacaoDeAdocaoSolicitacaoDeAdocao;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

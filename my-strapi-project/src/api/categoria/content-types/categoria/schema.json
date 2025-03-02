@@ -11,13 +11,12 @@
   },
   "attributes": {
     "nome": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "pets": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::pet.pet",
+      "target": "api::cadastro-de-pet.cadastro-de-pet",
       "mappedBy": "categoria"
     }
   }
