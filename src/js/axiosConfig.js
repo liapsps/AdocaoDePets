@@ -1,4 +1,12 @@
-const API_URL = "http://localhost:1337";
+const api = axios.create({
+  baseURL: "http://localhost:1337/api",
+  timeout: 10000,
+});
+
+export default api;
+
+
+/* const API_URL = "http://localhost:1337";
 
 const api = axios.create({
   baseURL: API_URL,
@@ -33,3 +41,4 @@ api.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+*/

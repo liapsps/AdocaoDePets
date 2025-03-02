@@ -1,4 +1,4 @@
-// Array de pets
+/* // Array de pets
 const pets = [
   {
     id: 1,
@@ -135,3 +135,4 @@ document.getElementById("filter-clear").addEventListener("click", clearFilters);
 // Inicializa os filtros e exibe os pets ao carregar a página
 populateFilters();
 displayPets(pets);
+*/
