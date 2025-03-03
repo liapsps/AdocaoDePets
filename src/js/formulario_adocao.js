@@ -56,7 +56,7 @@ Authorization: `Bearer ${token}`,
 },
 });
 alert('Solicitação de adoção enviada com sucesso!');
-window.location.href = 'home.html';
+window.location.href = 'lista_solicitacoes.html';
 } catch (error) {
 console.error('Erro ao enviar solicitação:', error);
 alert('Não foi possível enviar a solicitação. Tente novamente.');

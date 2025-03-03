@@ -1,4 +1,5 @@
 import api from './axiosConfig.js';
+
  document.addEventListener('DOMContentLoaded', async () => {
  const solicitacoesContainer = document.getElementById('solicitacoes-container');
  // Verifica se o usuário está autenticado e é Administrador
