@@ -1,8 +1,6 @@
 import api from './axiosConfig.js';
-
  document.addEventListener('DOMContentLoaded', async () => {
  const solicitacoesContainer = document.getElementById('solicitacoes-container');
- // Verifica se o usuário está autenticado e é Administrador
  const token = localStorage.getItem("jwt");
  const userRole = localStorage.getItem("role");
  if (!token || userRole !== "Admin") {
@@ -46,7 +44,6 @@ ${petTamanho})</p>
 text">${justificativa || 'Não informado'}</span></p>
  <p><strong>Situação:</strong> <span class="situacao
 text">${situacao || 'Não definida'}</span></p>
- <p><strong>Adotante:</strong> ${adotanteNome}</p>
  </div>
  <div class="card-buttons">
  <button class="aceitar-button" ${situacao !== 'Pendente' ?
