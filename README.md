@@ -93,13 +93,13 @@ Promover a adoção responsável, aumentar a taxa de adoção e reduzir o abando
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/pet-lar.git
+   git clone <URL_DO_REPOSITORIO>
    ```
 
 2. Navegue até o diretório do projeto:
 
    ```bash
-   cd pet-lar
+   cd <NOME_DO_DIRETORIO>
    ```
 
 3. Instale as dependências do backend:
@@ -167,15 +167,15 @@ Promover a adoção responsável, aumentar a taxa de adoção e reduzir o abando
 1. Faça um fork do projeto.
 2. Crie uma nova branch:
    ```bash
-   git checkout -b minha-nova-funcionalidade
+   git checkout -b minha-branch
    ```
 3. Faça suas alterações e commit:
    ```bash
-   git commit -m 'Adiciona nova funcionalidade'
+   git commit -m "Minha contribuição"
    ```
 4. Envie para o repositório remoto:
    ```bash
-   git push origin minha-nova-funcionalidade
+   git push origin minha-branch
    ```
 5. Abra um Pull Request.
 
