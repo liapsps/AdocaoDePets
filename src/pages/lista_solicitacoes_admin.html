@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitações de Adoção - Administração</title>
+    <link rel="stylesheet" href="../css/lista_solicitacoes.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <img src="../assets/logo.jpeg" alt="Logo PetLar" id="logo" />
+      <nav>
+        <a href="../pages/home.html">Home</a>
+        <a href="../pages/lista_pets.html">Pets Disponíveis</a>
+        <a href="../pages/lista_solicitacoes.html">Solicitações</a>
+        <a href="../pages/cadastro_animais.html">Cadastro de Animais</a>
+        <button id="logout-button" onclick="logout()" style="display: none">
+          Sair
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section id="solicitacoes">
+        <h1>Solicitações de Adoção</h1>
+        <!-- Contêiner onde os cards serão inseridos via JavaScript -->
+        <div id="solicitacoes-container"></div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
+      <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
+    </footer>
+    <!-- Scripts necessários -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../js/axiosConfig.js"></script>
+    <script type="module" src="../js/lista_solicitacoes_admin.js"></script>
+  </body>
+</html>
