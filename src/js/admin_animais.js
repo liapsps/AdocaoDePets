@@ -83,14 +83,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     editTamanho.value = tamanho || '';
     editDescricao.value = descricao || '';
     editIdade.value = idade || '';
+    // Popula o select de categorias (caso não esteja preenchido ou para atualizar)
+    await populateEditCategories();
     // Preenche o select de categoria com o valor atual, se disponível
     if (categoria && categoria.documentId) {
       editCategoria.value = categoria.documentId;
     } else {
       editCategoria.value = '';
     }
-    // Popula o select de categorias (caso não esteja preenchido ou para atualizar)
-    await populateEditCategories();
     // Exibe o modal
     editModal.style.display = 'block';
   }

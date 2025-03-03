@@ -31,12 +31,14 @@ Promover a adoção responsável, aumentar a taxa de adoção e reduzir o abando
 - Filtro de Busca por Espécie, Raça, Idade, Tamanho, etc.
 - Registro de Interesse na Adoção
 - Visualização de Detalhes do Animal
+- Gerenciamento de Perfil de Usuário
+- Listagem e Gerenciamento de Solicitações de Adoção
 
 ## :spiral_calendar: Entidades ou tabelas do sistema
 
 - **Usuário:** Representa as pessoas que utilizam a aplicação (adotantes e administradores).
 - **Animal:** Armazena informações sobre os animais disponíveis para adoção.
-- **Interesse:** Registra os usuários interessados em adotar um animal específico.
+- **Solicitação de Adoção:** Registra os usuários interessados em adotar um animal específico.
 
 ## :desktop_computer: Tecnologias e frameworks utilizados
 
@@ -55,27 +57,28 @@ Promover a adoção responsável, aumentar a taxa de adoção e reduzir o abando
 
 ## :shipit: Operações implementadas para cada entidade da aplicação
 
-| Entidade  | Criação | Leitura | Atualização | Remoção |
-| --------- | ------- | ------- | ----------- | ------- |
-| Usuário   | X       | X       | X           | X       |
-| Animal    | X       | X       | X           | X       |
-| Interesse | X       | X       |             | X       |
+| Entidade              | Criação | Leitura | Atualização | Remoção |
+| --------------------- | ------- | ------- | ----------- | ------- |
+| Usuário               | X       | X       | X           | X       |
+| Animal                | X       | X       | X           | X       |
+| Solicitação de Adoção | X       | X       | X           | X       |
 
 ## :neckbeard: Rotas da API REST utilizadas
 
-| Método HTTP | URL                  |
-| ----------- | -------------------- |
-| GET         | /api/usuarios        |
-| POST        | /api/usuarios        |
-| PUT         | /api/usuarios/{id}   |
-| DELETE      | /api/usuarios/{id}   |
-| GET         | /api/animais         |
-| POST        | /api/animais         |
-| PUT         | /api/animais/{id}    |
-| DELETE      | /api/animais/{id}    |
-| GET         | /api/interesses      |
-| POST        | /api/interesses      |
-| DELETE      | /api/interesses/{id} |
+| Método HTTP | URL                    |
+| ----------- | ---------------------- |
+| GET         | /api/usuarios          |
+| POST        | /api/usuarios          |
+| PUT         | /api/usuarios/{id}     |
+| DELETE      | /api/usuarios/{id}     |
+| GET         | /api/animais           |
+| POST        | /api/animais           |
+| PUT         | /api/animais/{id}      |
+| DELETE      | /api/animais/{id}      |
+| GET         | /api/solicitacoes      |
+| POST        | /api/solicitacoes      |
+| PUT         | /api/solicitacoes/{id} |
+| DELETE      | /api/solicitacoes/{id} |
 
 ## :gear: Configuração do Projeto
 
