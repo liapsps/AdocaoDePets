@@ -26,7 +26,12 @@
       <nav>
         <a href="como_adotar.html">Como Adotar</a>
         <a href="lista_pets.html">Pets Disponíveis</a>
-        <a href="cadastro_animais.html">Cadastro de Animais</a>
+        <a
+          href="cadastro_animais.html"
+          id="cadastro-animais-link"
+          style="display: none"
+          >Cadastro de Animais</a
+        >
         <button id="logout-button" onclick="logout()" style="display: none">
           Sair
         </button>
@@ -78,5 +83,16 @@
       <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
       <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const token = localStorage.getItem("jwt");
+        if (token) {
+          document.getElementById("cadastro-animais-link").style.display =
+            "block";
+          document.getElementById("logout-button").style.display = "block";
+          document.getElementById("login-link").style.display = "none";
+        }
+      });
+    </script>
   </body>
 </html>

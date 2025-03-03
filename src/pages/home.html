@@ -23,8 +23,33 @@
       <nav>
         <a href="como_adotar.html">Como Adotar</a>
         <a href="lista_pets.html">Pets Disponíveis</a>
-        <a href="cadastro_animais.html">Cadastro de Animais</a>
-        <button id="logout-button" onclick="logout()">Sair</button>
+        <a
+          href="cadastro_animais.html"
+          id="cadastro-animais-link"
+          style="display: none"
+          >Cadastro de Animais</a
+        >
+        <a
+          href="admin_animais.html"
+          id="admin-animais-link"
+          style="display: none"
+          >Administração de Animais</a
+        >
+        <a
+          href="lista_solicitacoes_admin.html"
+          id="solicitacoes-admin-link"
+          style="display: none"
+          >Solicitações de Adoção (Admin)</a
+        >
+        <a
+          href="lista_solicitacoes.html"
+          id="minhas-solicitacoes-link"
+          style="display: none"
+          >Minhas Solicitações</a
+        >
+        <button id="logout-button" onclick="logout()" style="display: none">
+          Sair
+        </button>
       </nav>
     </header>
 
@@ -121,5 +146,20 @@
 
     <script src="../js/home.js"></script>
     <script src="../js/cadastrar.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const token = localStorage.getItem("jwt");
+        if (token) {
+          document.getElementById("cadastro-animais-link").style.display =
+            "block";
+          document.getElementById("admin-animais-link").style.display = "block";
+          document.getElementById("solicitacoes-admin-link").style.display =
+            "block";
+          document.getElementById("minhas-solicitacoes-link").style.display =
+            "block";
+          document.getElementById("logout-button").style.display = "block";
+        }
+      });
+    </script>
   </body>
 </html>

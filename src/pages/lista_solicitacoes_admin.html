@@ -12,10 +12,35 @@
       <img src="../assets/logo.jpeg" alt="Logo PetLar" id="logo" />
       <nav>
         <a href="../pages/home.html">Home</a>
+        <a href="../pages/como_adotar.html">Como Adotar</a>
         <a href="../pages/lista_pets.html">Pets Disponíveis</a>
-        <a href="../pages/lista_solicitacoes.html">Solicitações</a>
-        <a href="../pages/cadastro_animais.html">Cadastro de Animais</a>
-        <button id="logout-button" onclick="logout()">Sair</button>
+        <a
+          href="../pages/cadastro_animais.html"
+          id="cadastro-animais-link"
+          style="display: none"
+          >Cadastro de Animais</a
+        >
+        <a
+          href="../pages/admin_animais.html"
+          id="admin-animais-link"
+          style="display: none"
+          >Administração de Animais</a
+        >
+        <a
+          href="../pages/lista_solicitacoes_admin.html"
+          id="solicitacoes-admin-link"
+          style="display: none"
+          >Solicitações de Adoção (Admin)</a
+        >
+        <a
+          href="../pages/lista_solicitacoes.html"
+          id="minhas-solicitacoes-link"
+          style="display: none"
+          >Minhas Solicitações</a
+        >
+        <button id="logout-button" onclick="logout()" style="display: none">
+          Sair
+        </button>
       </nav>
     </header>
     <main>
@@ -33,5 +58,20 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="../js/axiosConfig.js"></script>
     <script type="module" src="../js/lista_solicitacoes_admin.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const token = localStorage.getItem("jwt");
+        if (token) {
+          document.getElementById("cadastro-animais-link").style.display =
+            "block";
+          document.getElementById("admin-animais-link").style.display = "block";
+          document.getElementById("solicitacoes-admin-link").style.display =
+            "block";
+          document.getElementById("minhas-solicitacoes-link").style.display =
+            "block";
+          document.getElementById("logout-button").style.display = "block";
+        }
+      });
+    </script>
   </body>
 </html>

@@ -18,7 +18,7 @@
 <nav>
 <a href="como_adotar.html">Como Adotar</a>
 <a href="lista_pets.html">Pets Disponíveis</a>
-<a href="cadastro_animais.html">Cadastro de Animais</a>
+<a href="cadastro_animais.html" id="cadastro-animais-link" style="display: none;">Cadastro de Animais</a>
 <button id="logout-button" onclick="logout()" style="display: none">Sair</button>
 </nav>
 </header>
@@ -52,5 +52,14 @@ button">Adotar</a> -->
 </script>
 <script type="module" src="../js/axiosConfig.js"></script>
 <script type="module" src="../js/detalhes_pet.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      document.getElementById("cadastro-animais-link").style.display = "block";
+      document.getElementById("logout-button").style.display = "block";
+    }
+  });
+</script>
 </body>
 </html>
