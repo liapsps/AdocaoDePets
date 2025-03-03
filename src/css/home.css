@@ -118,12 +118,20 @@ p {
   flex-wrap: wrap;
 }
 
+#sobre .about-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .about-text {
   flex: 1;
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 20px; /* Add margin to the sides */
 }
 
 .about-video {
