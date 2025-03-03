@@ -1,19 +1,22 @@
 // Arquivo responsável por fazer a validação e alteração da interface do usuário com base no status de autenticação
-function updateAuthUI() { 
+function updateAuthUI() {
     const token = localStorage.getItem("jwt");
-    if (token) {
-        alert("Usuário já autenticado!");
-        return;
-    }
+    // Remove the early return that prevents UI updates
+    // if (token) {
+    //   alert("Usuário já autenticado!");
+    //   return;
+    // }
   
     const isLoggedIn = !!token;
-    
+    console.log("Auth status:", isLoggedIn ? "Logged in" : "Not logged in");
+  
     // Obter dados do usuário para verificar status de admin
     let isAdmin = false;
     if (isLoggedIn) {
       try {
         const role = localStorage.getItem("role");
         isAdmin = role === "Admin";
+        console.log("User role:", role, "Is admin:", isAdmin);
       } catch (error) {
         console.error("Error parsing user data:", error);
       }

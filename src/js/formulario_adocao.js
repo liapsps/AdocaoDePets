@@ -49,7 +49,7 @@ pet: { connect: [petId] },
 justificativa: justificativa,
 situacao: 'Pendente',
 },
-}
+};
 const res = await api.post('/solicitacao-de-adocaos', body, {
 headers: {
 Authorization: `Bearer ${token}`,
