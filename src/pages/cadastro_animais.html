@@ -11,9 +11,93 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../js/axiosConfig.js"></script>
+    <script type="module" src="../js/axiosConfig.js"></script>
+    <script type="module" src="../js/cadastro_animais.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <a href="home.html">
+          <img src="../assets/logo.jpeg" alt="Logo PetLar" id="logo" />
+        </a>
+        <a href="entrar.html">Entrar</a>
+      </div>
+      <nav>
+        <a href="como_adotar.html">Como Adotar</a>
+        <a href="lista_pets.html">Pets Disponíveis</a>
+        <a href="formulario_adocao.html">Formulário de Adoção</a>
+        <a href="cadastro_animais.html">Cadastro de Animais</a>
+        <button id="logout-button" onclick="logout()" style="display: none">
+          Sair
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Cadastro de Animais</h1>
+      <form>
+        <label for="nome">Nome do Pet:</label>
+        <input type="text" id="nome" name="nome" required />
+
+        <label for="raca">Raça:</label>
+        <input type="text" id="raca" name="raca" required />
+
+        <label for="foto">Foto do Pet:</label>
+        <input type="file" id="foto" name="foto" accept="image/*" required />
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+          <option value="">Selecione</option>
+          <option value="Macho">Macho</option>
+          <option value="Fêmea">Fêmea</option>
+        </select>
+
+        <label for="tamanho">Tamanho:</label>
+        <select id="tamanho" name="tamanho" required>
+          <option value="">Selecione</option>
+          <option value="Pequeno">Pequeno</option>
+          <option value="Médio">Médio</option>
+          <option value="Grande">Grande</option>
+        </select>
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" required />
+        <label for="categoria">Categoria:</label>
+        <select id="categoria" name="categoria">
+          <option value="">Selecione</option>
+        </select>
+
+        <button type="submit">Cadastrar Animal</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
+      <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
+    </footer>
+  </body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Animais</title>
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/cadastro_animais.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../js/axiosConfig.js"></script>
     <script src="../js/auth.js" defer></script>
-    <script src="../js/cadastro_animais.js" defer></script>
+    <script type="module" src="../js/cadastro_animais.js" defer></script>
   </head>
   <body>
     <header>
@@ -37,35 +121,35 @@
     <main>
       <h1>Cadastro de Animais</h1>
       <form id="formCadastroPet">
-        <label for="nome">Nome:</label>
+        <label for="nome">Nome</label>
         <input type="text" id="nome" name="nome" required />
 
-        <label for="raca">Raça:</label>
+        <label for="raca">Raça</label>
         <input type="text" id="raca" name="raca" required />
 
-        <label for="foto">Foto:</label>
+        <label for="foto">Foto</label>
         <input type="file" id="foto" name="foto" accept="image/*" />
 
-        <label for="sexo">Sexo:</label>
+        <label for="sexo">Sexo</label>
         <select id="sexo" name="sexo" required>
           <option value="Macho">Macho</option>
           <option value="Fêmea">Fêmea</option>
         </select>
 
-        <label for="tamanho">Tamanho:</label>
+        <label for="tamanho">Tamanho</label>
         <select id="tamanho" name="tamanho" required>
           <option value="Pequeno">Pequeno</option>
           <option value="Médio">Médio</option>
           <option value="Grande">Grande</option>
         </select>
 
-        <label for="idade">Idade (em anos):</label>
+        <label for="idade">Idade (em anos)</label>
         <input type="number" id="idade" name="idade" required />
 
-        <label for="categoria">Categoria:</label>
+        <label for="categoria">Categoria</label>
         <select id="categoria" name="categoria" required></select>
 
-        <label for="descricao">Descrição:</label>
+        <label for="descricao">Descrição</label>
         <textarea id="descricao" name="descricao" rows="4" required></textarea>
 
         <button type="submit" class="button_enviar">Cadastrar Animal</button>
@@ -79,3 +163,4 @@
     </footer>
   </body>
 </html>
+-->

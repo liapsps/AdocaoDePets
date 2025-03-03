@@ -124,7 +124,7 @@ main {
 
 .steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
   background-color: #f4f4f4;
@@ -137,6 +137,12 @@ main {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .step h2 {
@@ -147,6 +153,8 @@ main {
 
 .step p {
   color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .cta {
@@ -165,7 +173,7 @@ main {
 .cta .btn {
   display: inline-block;
   text-decoration: none;
-  color: #3d66cc;
+  color: #2c7abc;
   background-color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
