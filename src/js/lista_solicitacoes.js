@@ -2,42 +2,40 @@ import api from './axiosConfig.js';
  document.addEventListener('DOMContentLoaded', async () => {
  const solicitacoesContainer = document.getElementById('solicitacoes-container');
  const token = localStorage.getItem("jwt");
- const userRole = localStorage.getItem("role");
- if (!token || userRole !== "Admin") {
- alert("Acesso negado! Você não possui permissão para acessar esta página.");
- window.location.href = "entrar.html"; // ou redirecione para a home
+ const userId = localStorage.getItem("id");
+ if (!token || !userId) {
+ window.location.href = "entrar.html";
  return;
  }
- // Função para buscar todas as solicitações de adoção
+ alert("Usuário não autenticado. Faça login novamente.");
  async function fetchSolicitacoes() {
  try {
- const res = await api.get('/solicitacao-de-adocaos', {
- params: { populate: '*' },
-headers: { Authorization: `Bearer ${token}` }
+const res = await api.get('/solicitacao-de-adocaos', {
+ params: {
+ 'filters[adotante][id][$eq]': userId,
+ populate: '*'
+ },
+ headers: {
+ Authorization: `Bearer ${token}`
+ }
  });
- const solicitacoes = res.data.data; // Array de solicitações
+ const solicitacoes = res.data.data;
  if (!solicitacoes || solicitacoes.length === 0) {
- solicitacoesContainer.innerHTML = `<p>Nenhuma solicitação de adoção
- encontrada.</p>`;
+ solicitacoesContainer.innerHTML = `<p>Você não possui solicitações
+ de adoção.</p>`;
  return;
  }
- solicitacoesContainer.innerHTML = ""; // Limpa o container
+ solicitacoesContainer.innerHTML = "";
  solicitacoes.forEach(solic => {
- // Considerando que cada solicitação tem os campos:
- // id, justificativa, situacao, pet e adotante
- const { documentId, id, justificativa, situacao, pet, adotante } =
- solic;
+ const { documentId, id, justificativa, situacao, pet } = solic;
  const petNome = pet?.nome || "Sem nome";
  const petRaca = pet?.raca || "N/A";
  const petTamanho = pet?.tamanho || "N/A";
- // Caso o objeto adotante esteja populado, podemos exibir o nome
- dele (opcional)
- const adotanteNome = adotante?.nomeCompleto || "Não definido";
- const card = document.createElement('div');
+const card = document.createElement('div');
  card.classList.add('solicitacao-card');
  card.innerHTML = `
  <div class="card-content">
-<h2>Solicitação #${id}</h2>
+ <h2>Solicitação #${id}</h2>
  <p><strong>Pet:</strong> ${petNome} (Raça: ${petRaca}, Tamanho: 
 ${petTamanho})</p>
  <p><strong>Justificativa:</strong> <span class="justificativa
@@ -46,86 +44,51 @@ text">${justificativa || 'Não informado'}</span></p>
 text">${situacao || 'Não definida'}</span></p>
  </div>
  <div class="card-buttons">
- <button class="aceitar-button" ${situacao !== 'Pendente' ?
- 'disabled' : ''}>Aceitar</button>
- <button class="recusar-button" ${situacao !== 'Pendente' ?
- 'disabled' : ''}>Recusar</button>
+ <button class="edit-button" ${situacao !== 'Pendente' ?
+ 'disabled' : ''}>Editar</button>
+ <button class="delete-button">Excluir</button>
  </div>
  `;
- // Botão "Aceitar"
- const aceitarButton = card.querySelector('.aceitar-button');
- aceitarButton.addEventListener('click', async () => {
- if (confirm("Tem certeza que deseja aceitar esta solicitação?")) {
+ const editButton = card.querySelector('.edit-button');
+ editButton.addEventListener('click', async () => {
+ const currentJustificativa = card.querySelector('.justificativa-text').textContent;
+ const novaJustificativa = prompt("Digite a nova justificativa:",
+ currentJustificativa);
+ if (novaJustificativa && novaJustificativa !==
+ currentJustificativa) {
  try {
- // Atualiza a solicitação para "Confirmada"
- await api.put(`/solicitacao-de-adocaos/${documentId}`, {
- data: { situacao: "Confirmado" }
- }, {
- headers: { Authorization: `Bearer ${token}` }
-});
- // Atualiza o pet para estabelecer o relacionamento com o
- adotante.
- solicitação
- // Supondo que o objeto "adotante" esteja presente na
- console.log(adotante.id)
- //   
-//     
-//       
-//             
-//         
-//     
-//       
-//     
-//   
-if (pet && adotante) {
- await api.put(`/pets/${pet.documentId}`, {
+await api.put(`/solicitacao-de-adocaos/${documentId}`, {
  data: {
- adotante: adotante.id
- }  
-}, {
- headers: { Authorization: `Bearer ${token}` }
- });
- }
- if (pet && adotante) {
- await api.put(`/users/${adotante.id}`, {
- data: {
- pets: { connect: [ pet.documentId ] }
+ justificativa: novaJustificativa
  }
  }, {
- headers: { Authorization: `Bearer ${token}` }
- });
+ headers: {
+ Authorization: `Bearer ${token}`
  }
-alert('Solicitação confirmada com sucesso!');
- // Atualiza o texto e desabilita os botões
- card.querySelector('.situacao-text').textContent =
- "Confirmada";
- aceitarButton.disabled = true;
- recusarButton.disabled = true;
+ });
+ alert('Solicitação atualizada com sucesso!');
+ card.querySelector('.justificativa-text').textContent =
+ novaJustificativa;
  } catch (error) {
- console.error(`Erro ao aceitar solicitação ${id}:`, error);
- alert('Erro ao confirmar a solicitação.');
+ console.error(`Erro ao atualizar solicitação ${id}:`, error);
+ alert('Erro ao atualizar a solicitação.');
  }
  }
  });
- // Botão "Recusar"
- const recusarButton = card.querySelector('.recusar-button');
- recusarButton.addEventListener('click', async () => {
- if (confirm("Tem certeza que deseja recusar esta solicitação?")) {
+ const deleteButton = card.querySelector('.delete-button');
+ deleteButton.addEventListener('click', async () => {
+ if (confirm("Tem certeza que deseja excluir esta solicitação?")) {
  try {
- // Atualiza a solicitação para "Recusada"
- await api.put(`/solicitacao-de-adocaos/${documentId}`, {
- data: { situacao: "Recusado" }
- }, {
- headers: { Authorization: `Bearer ${token}` }
+ await api.delete(`/solicitacao-de-adocaos/${documentId}`, {
+ headers: {
+ Authorization: `Bearer ${token}`
+ }
  });
- alert('Solicitação recusada com sucesso!');
- // Atualiza o texto e desabilita os botões
-card.querySelector('.situacao-text').textContent = "Recusada";
- aceitarButton.disabled = true;
- recusarButton.disabled = true;
+ alert('Solicitação excluída com sucesso!');
+ card.remove();
  } catch (error) {
- console.error(`Erro ao recusar solicitação ${id}:`, error);
- alert('Erro ao recusar a solicitação.');
+ console.error(`Erro ao excluir solicitação ${id}:`, error);
+ alert('Erro ao excluir a solicitação.');
  }
  }
  });
@@ -133,7 +96,7 @@ card.querySelector('.situacao-text').textContent = "Recusada";
  });
  } catch (error) {
  console.error('Erro ao buscar solicitações:', error);
- solicitacoesContainer.innerHTML = "<p>Ocorreu um erro ao carregar as solicitações.</p>";
+ solicitacoesContainer.innerHTML = "<p>Ocorreu um erro ao carregar suas solicitações.</p>";
  }
  }
  await fetchSolicitacoes();

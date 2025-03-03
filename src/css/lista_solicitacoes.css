@@ -1,5 +1,5 @@
- /* Estilo geral do corpo */
- body {
+/* Estilo geral do corpo */
+body {
     font-family: "Poppins", sans-serif;
     background-color: #fff;
     color: #333;
@@ -9,7 +9,7 @@
     flex-direction: column;
     height: 100%;
     }
-
+    /* Estilo do cabeçalho */
     main {
     flex-grow: 1; /* Ocupa o espaço restante na tela */
     }
@@ -92,7 +92,8 @@
     padding: 15px 0;
     text-align: center;
     margin-top: 60px;
-}
+   }
+    
     footer p {
     margin: 0;
     font-size: 1rem;
