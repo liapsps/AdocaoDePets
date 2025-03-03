@@ -47,53 +47,72 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
   if (form) {
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-
-      try {
-        let fotoId = null;
-        if (fotoInput.files && fotoInput.files[0]) {
-          const formData = new FormData();
-          formData.append('files', fotoInput.files[0]);
-
-          const uploadRes = await api.post('/upload', formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-                Authorization: `Bearer ${token}`, 
-            },
-          });
-
-          const uploadedFile = uploadRes.data[0];
-          fotoId = uploadedFile.id; 
-        }
-
-        const body = {
-          data: {
-            nome: nomeInput.value.trim(),
-            raca: racaInput.value.trim(),
-            sexo: sexoSelect.value,
-            tamanho: tamanhoSelect.value,
-            descricao: descricaoTextarea.value.trim(),
-            idade: parseInt(idadeInput.value, 10),
-            categoria: { connect: [categoriaSelecionada.value] }
-          },
-        };
-
-        if (fotoId) {
-          body.data.foto = fotoId;
-        }
-
-        const createRes = await api.post('/pets', body, {
-            headers: { Authorization: `Bearer ${token}` }, 
-        });
-
-        // Se chegou aqui, deu certo
-        alert('Animal cadastrado com sucesso!');
-        form.reset();
-      } catch (error) {
-        console.error('Erro ao cadastrar animal:', error);
-        alert('Ocorreu um erro ao cadastrar o animal. Verifique o console para mais detalhes.');
-      }
-    });
+    form.addEventListener('submit', cadastrarAnimal);
   }
 });
+
+async function cadastrarAnimal(event) {
+  event.preventDefault();
+
+  const form = document.querySelector('form');
+  const nomeInput = document.getElementById('nome');
+  const racaInput = document.getElementById('raca');
+  const fotoInput = document.getElementById('foto');
+  const sexoSelect = document.getElementById('sexo');
+  const tamanhoSelect = document.getElementById('tamanho');
+  const descricaoTextarea = document.getElementById('descricao');
+  const idadeInput = document.getElementById('idade');
+  const categoriaSelecionada = document.getElementById('categoria');
+  const token = localStorage.getItem("jwt");
+
+  try {
+    let fotoId = null;
+    if (fotoInput.files && fotoInput.files[0]) {
+      const formData = new FormData();
+      formData.append('files', fotoInput.files[0]);
+
+      const uploadRes = await api.post('/upload', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            Authorization: `Bearer ${token}`, 
+        },
+        timeout: 10000 // Increase timeout to 10 seconds
+      });
+
+      const uploadedFile = uploadRes.data[0];
+      fotoId = uploadedFile.id; 
+    }
+
+    const body = {
+      data: {
+        nome: nomeInput.value.trim(),
+        raca: racaInput.value.trim(),
+        sexo: sexoSelect.value,
+        tamanho: tamanhoSelect.value,
+        descricao: descricaoTextarea.value.trim(),
+        idade: parseInt(idadeInput.value, 10),
+        categoria: { connect: [categoriaSelecionada.value] }
+      },
+    };
+
+    if (fotoId) {
+      body.data.foto = fotoId;
+    }
+
+    const createRes = await api.post('/pets', body, {
+        headers: { Authorization: `Bearer ${token}` }, 
+        timeout: 10000 // Increase timeout to 10 seconds
+    });
+
+    // Se chegou aqui, deu certo
+    alert('Animal cadastrado com sucesso!');
+    form.reset();
+  } catch (error) {
+    if (error.code === 'ECONNABORTED') {
+      console.error('Request timed out:', error);
+    } else {
+      console.error('Erro ao cadastrar animal:', error);
+    }
+    alert('Ocorreu um erro ao cadastrar o animal. Verifique o console para mais detalhes.');
+  }
+}

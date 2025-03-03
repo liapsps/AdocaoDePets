@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administração de Animais</title>
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/admin_animais.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <a href="home.html">
+          <img src="../assets/logo.jpeg" alt="Logo PetLar" id="logo" />
+        </a>
+        <a href="entrar.html">Entrar</a>
+      </div>
+      <nav>
+        <a href="como_adotar.html">Como Adotar</a>
+        <a href="lista_pets.html">Pets Disponíveis</a>
+        <a href="formulario_adocao.html">Formulário de Adoção</a>
+        <a href="cadastro_animais.html">Cadastro de Animais</a>
+        <button id="logout-button" onclick="logout()" style="display: none">
+          Sair
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="admin-animais">
+        <h1>Administração de Animais</h1>
+        <!-- Container dos cards de animais -->
+        <div id="animais-container"></div>
+      </section>
+
+      <!-- Modal para editar animal -->
+      <div id="edit-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Editar Animal</h2>
+          <form id="edit-form">
+            <label for="edit-nome">Nome do Pet:</label>
+            <input type="text" id="edit-nome" name="nome" required />
+
+            <label for="edit-raca">Raça:</label>
+            <input type="text" id="edit-raca" name="raca" required />
+
+            <label for="edit-foto">Foto do Pet:</label>
+            <input type="file" id="edit-foto" name="foto" accept="image/*" />
+
+            <label for="edit-sexo">Sexo:</label>
+            <select id="edit-sexo" name="sexo" required>
+              <option value="">Selecione</option>
+              <option value="Macho">Macho</option>
+              <option value="Fêmea">Fêmea</option>
+            </select>
+
+            <label for="edit-tamanho">Tamanho:</label>
+            <select id="edit-tamanho" name="tamanho" required>
+              <option value="">Selecione</option>
+              <option value="Pequeno">Pequeno</option>
+              <option value="Médio">Médio</option>
+              <option value="Grande">Grande</option>
+            </select>
+
+            <label for="edit-descricao">Descrição:</label>
+            <textarea
+              id="edit-descricao"
+              name="descricao"
+              rows="4"
+              required
+            ></textarea>
+
+            <label for="edit-idade">Idade:</label>
+            <input type="number" id="edit-idade" name="idade" required />
+
+            <label for="edit-categoria">Categoria:</label>
+            <select id="edit-categoria" name="categoria">
+              <option value="">Selecione</option>
+              <!-- As opções de categoria podem ser preenchidas via JavaScript -->
+            </select>
+
+            <!-- Campo oculto para armazenar o ID do animal -->
+            <input type="hidden" id="edit-animal-id" name="id" />
+            <button type="submit">Salvar Alterações</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
+      <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>
+    </footer>
+
+    <!-- Os scripts (JS) para manipular a tela serão carregados separadamente -->
+    <script type="module" src="../js/admin_animais.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../js/axiosConfig.js"></script>
+  </body>
+</html>

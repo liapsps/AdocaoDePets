@@ -1,0 +1,210 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Corpo e layout */
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Main */
+  main {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 50px auto;
+  }
+  
+  /* Seção de administração */
+  #admin-animais {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #admin-animais h1 {
+    text-align: center;
+    color: #2c7abc;
+    margin-bottom: 20px;
+  }
+  
+  /* Container dos cards */
+  #animais-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Card do animal */
+  .animal-card {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 280px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .animal-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .animal-card h2 {
+    font-size: 1.2rem;
+    color: #2c7abc;
+    margin-bottom: 10px;
+  }
+  
+  .animal-card p {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Botões de ação no card */
+  .animal-card .card-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+  }
+  
+  .animal-card .edit-button,
+  .animal-card .delete-button {
+    padding: 5px 8px;
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #fff;
+  }
+  
+  .animal-card .edit-button {
+    background-color: #2c7abc;
+  }
+  
+  .animal-card .edit-button:hover {
+    background-color: #1e5c8a;
+  }
+  
+  .animal-card .delete-button {
+    background-color: #e74c3c;
+  }
+  
+  .animal-card .delete-button:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Modal para edição */
+  .modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #f4f4f4;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Formulário no modal */
+  .modal-content form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-content form label {
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  
+  .modal-content form input,
+  .modal-content form select,
+  .modal-content form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font: inherit;
+    width: 100%;
+  }
+  
+  .modal-content form textarea {
+    resize: vertical;
+  }
+  
+  .modal-content form button[type="submit"] {
+    padding: 12px;
+    background-color: #2c7abc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal-content form button[type="submit"]:hover {
+    background-color: #1e5c8a;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #2c7abc;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  footer a:hover {
+    color: #f4f4f4;
+  }

@@ -10,42 +10,64 @@ body {
   height: 100%;
 }
 
-/* Estilo do cabeçalho */
+/* Header styles */
 header {
+  background-color: #2c7abc;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #2c7abc;
-  color: white;
 }
 
 header img {
   height: 50px;
 }
 
-header nav a {
-  color: white;
+header a {
+  color: #fff;
+  margin: 0 15px;
   text-decoration: none;
-  margin: 0 10px;
   font-weight: 600;
+  transition: color 0.3s;
 }
 
-header nav a:hover {
+nav a:hover {
   color: #f4f4f4;
+  opacity: 0.6;
+  transition: color 0.3s;
 }
 
-header #logout-button {
-  background-color: #e74c3c;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 3px;
-  cursor: pointer;
-  color: white;
+#logo {
+  height: 50px;
+  margin-right: 20px;
 }
 
-header #logout-button:hover {
-  background-color: #c0392b;
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+#logout-button {
+  background-color: transparent;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+#logout-button:hover {
+  background-color: #fff;
+  color: #2c7abc;
+  transition: background-color 0.3s;
 }
 
 /* Seção de solicitações */
@@ -137,13 +159,13 @@ main {
   margin: 5px 0;
 }
 
-/* Rodapé */
+/* Footer styles */
 footer {
   background-color: #2c7abc;
   color: white;
   padding: 15px 0;
   text-align: center;
-  margin-top: 60px;
+  margin-top: auto;
 }
 
 footer p {
