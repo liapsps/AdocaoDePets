@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         categorias.forEach((categoria) => {
             const option = document.createElement("option");
-            option.value = categoria.documentId;
+            option.value = categoria.id; // Corrected variable name
             option.textContent = categoria.nome;
             categoriaSelecionada.appendChild(option);
         });
@@ -76,7 +76,7 @@ async function cadastrarAnimal(event) {
             'Content-Type': 'multipart/form-data',
             Authorization: `Bearer ${token}`, 
         },
-        timeout: 10000 // Increase timeout to 10 seconds
+        timeout: 15000 // Increase timeout to 10 seconds
       });
 
       const uploadedFile = uploadRes.data[0];

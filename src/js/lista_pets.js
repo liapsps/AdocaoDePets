@@ -35,7 +35,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
         pets.forEach((pet) => {
-            const { documentId, id, nome, raca, tamanho, idade, descricao, foto, categoria } = pet;
+            const { id, nome, raca, tamanho, idade, descricao, foto, categoria } = pet;
+            const documentId = pet.id; // Corrected variable name
             let imgUrl = "";
             if (foto && foto.url) {
                 imgUrl = foto.url;

@@ -69,7 +69,7 @@ function updateAuthUI() {
   function logout() {
     // Remover dados do usuário do localStorage
     localStorage.removeItem("jwt");
-    localStorage.removeItem("user");
+    localStorage.removeItem("role");
   
     // Redirecionar para a página inicial
     window.location.href = "../pages/home.html";

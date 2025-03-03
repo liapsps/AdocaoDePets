@@ -29,9 +29,11 @@ params: { populate: '*' },
 });
 const pet = res.data.data;
 if (pet) {
-nomePetInput.value = pet.nome || 'Sem nome';
-racaPetInput.value = pet.raca || 'N/A';
-tamanhoPetInput.value = pet.tamanho || 'N/A';
+const { id, nome, raca, tamanho } = pet;
+const documentId = pet.id; // Corrected variable name
+nomePetInput.value = nome || 'Sem nome';
+racaPetInput.value = raca || 'N/A';
+tamanhoPetInput.value = tamanho || 'N/A';
 }
 } catch (error) {
 console.error('Erro ao buscar pet:', error);
