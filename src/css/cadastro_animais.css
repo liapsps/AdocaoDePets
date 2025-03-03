@@ -1,11 +1,11 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: #333;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0; /* Ensure no margin on body */
 }
 
 /* Header styles */
@@ -69,13 +69,8 @@ header nav {
 }
 
 main {
-  width: 60%;
-  margin: 40px auto;
-  min-height: 70vh;
+  flex: 1;
   padding: 20px;
-  background-color: f4f4f4;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -86,49 +81,49 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-label {
-  font-weight: bold;
-  margin-top: 10px;
+form label {
+  margin-bottom: 5px;
+  font-weight: 600;
 }
 
-input,
-select,
-textarea {
-  padding: 8px;
-  margin-top: 5px;
+form input,
+form select,
+form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-family: "Poppins", sans-serif;
 }
 
-.button_enviar {
-  width: 100%;
-  padding: 10px 15px;
+form button {
+  padding: 10px;
   background-color: #2c7abc;
-  color: white;
+  color: #fff;
   border: none;
-  margin-top: 15px;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  font-weight: bold;
-  text-align: center;
+  font-weight: 600;
+  transition: background-color 0.3s;
 }
 
-.button_enviar:hover {
-  background-color: #1e5c8a;
+form button:hover {
+  background-color: #1a5a8a;
 }
 
 footer {
   background-color: #2c7abc;
   color: white;
+  padding: 15px 0;
   text-align: center;
-  padding: 10px;
+  margin-top: auto;
   position: relative;
   bottom: 0;
   width: 100%;
-  box-sizing: border-box;
-  margin-top: auto;
 }
 
 footer p {
@@ -147,15 +142,8 @@ footer a:hover {
   color: #f4f4f4;
 }
 
-/* Adicionar ao final do arquivo existente */
-
 .mensagem {
-  padding: 10px;
-  margin: 15px 0;
-  border-radius: 5px;
-  display: none;
-  text-align: center;
-  font-weight: bold;
+  display: none; /* Ensure the message box is hidden by default */
 }
 
 .sucesso {

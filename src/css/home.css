@@ -11,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0; /* Ensure no margin on body */
 }
 
 #intro {
@@ -258,6 +259,9 @@ footer {
   padding: 15px 0;
   text-align: center;
   margin-top: auto;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 footer p {

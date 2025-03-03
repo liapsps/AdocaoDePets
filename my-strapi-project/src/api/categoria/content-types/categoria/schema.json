@@ -19,13 +19,6 @@
       "relation": "oneToMany",
       "target": "api::pet.pet",
       "mappedBy": "categoria"
-    },
-    "especie": {
-      "type": "enumeration",
-      "enum": [
-        "Cachorro",
-        "Gato"
-      ]
     }
   }
 }
