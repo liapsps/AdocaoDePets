@@ -4,7 +4,8 @@
   "info": {
     "singularName": "categoria",
     "pluralName": "categorias",
-    "displayName": "Categoria"
+    "displayName": "Categoria",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,13 @@
       "relation": "oneToMany",
       "target": "api::pet.pet",
       "mappedBy": "categoria"
+    },
+    "especie": {
+      "type": "enumeration",
+      "enum": [
+        "Cachorro",
+        "Gato"
+      ]
     }
   }
 }

@@ -1,57 +1,62 @@
 import api from './axiosConfig.js';
 
+// Wait for the DOM to fully load
 document.addEventListener("DOMContentLoaded", () => {
   const petList = document.getElementById("pet-list");
 
-  function displayPets() {
-    const pets = [
-      {
-        id: 1,
-        nome: "Buddy",
-        raca: "Cachorro",
-        tamanho: "M",
-        idade: 3,
-        sexo: "Macho",
-        estadoSaude: "Excelente",
-        descricao: "Buddy é um cão amigável que adora brincar. Ele ama passeios ao ar livre e se dá bem com outros cães. Perfeito para famílias que procuram um pet ativo e carinhoso.",
-        foto: "../../assets/pet1.jpg"
-      },
-      // Adicione mais pets conforme necessário
-    ];
+  // Function to fetch and display pets
+  async function displayPets() {
+    try {
+      // Fetch pets from the API
+      const response = await api.get('/pets?populate=foto'); // Busca pets do Strapi
+      const pets = response.data.data.map(pet => ({
+        id: pet.id,
+        nome: pet.attributes.nome,
+        raca: pet.attributes.raca,
+        tamanho: pet.attributes.tamanho,
+        idade: pet.attributes.idade,
+        sexo: pet.attributes.sexo,
+        estadoSaude: pet.attributes.estadoSaude,
+        descricao: pet.attributes.descricao,
+        foto: pet.attributes.foto?.data?.attributes?.url || 'default.jpg'
+      }));
 
-    petList.innerHTML = "";
-    pets.forEach((pet) => {
-      const petItem = document.createElement("div");
-      petItem.classList.add("pet-card");
-      petItem.innerHTML = `
-        <img src="${pet.foto}" alt="${pet.nome}" class="pet-image">
-        <h3 class="pet-name">${pet.nome}</h3>
-        <p class="pet-raca">Raça: ${pet.raca}</p>
-        <p class="pet-tamanho">Tamanho: ${pet.tamanho}</p>
-        <p class="pet-idade">Idade: ${pet.idade} anos</p>
-        <p class="pet-sexo">Sexo: ${pet.sexo}</p>
-        <p class="pet-saude">Estado de saúde: ${pet.estadoSaude}</p>
-        <p class="pet-descricao">${pet.descricao}</p>
-        <button class="edit-pet" data-id="${pet.id}">Editar</button>
-        <button class="delete-pet" data-id="${pet.id}">Excluir</button>
-      `;
-      petList.appendChild(petItem);
+      // Clear the pet list and display fetched pets
+      petList.innerHTML = "";
+      pets.forEach((pet) => {
+        const petItem = document.createElement("div");
+        petItem.classList.add("pet-card");
+        petItem.innerHTML = `
+          <img src="${pet.foto}" alt="${pet.nome}" class="pet-image">
+          <h3 class="pet-name">${pet.nome}</h3>
+          <p class="pet-raca">Raça: ${pet.raca}</p>
+          <p class="pet-tamanho">Tamanho: ${pet.tamanho}</p>
+          <p class="pet-idade">Idade: ${pet.idade} anos</p>
+          <p class="pet-sexo">Sexo: ${pet.sexo}</p>
+          <p class="pet-saude">Estado de saúde: ${pet.estadoSaude}</p>
+          <p class="pet-descricao">${pet.descricao}</p>
+          <button class="edit-pet" data-id="${pet.id}">Editar</button>
+          <button class="delete-pet" data-id="${pet.id}">Excluir</button>
+        `;
+        petList.appendChild(petItem);
 
-      const editButton = petItem.querySelector(".edit-pet");
-      const deleteButton = petItem.querySelector(".delete-pet");
-
-      editButton.addEventListener("click", () => editPet(pet));
-      deleteButton.addEventListener("click", () => deletePet(pet.id));
-    });
+        // Add event listeners for edit and delete buttons
+        petItem.querySelector(".edit-pet").addEventListener("click", () => editPet(pet));
+        petItem.querySelector(".delete-pet").addEventListener("click", () => deletePet(pet.id));
+      });
+    } catch (error) {
+      console.error("Erro ao buscar pets:", error);
+    }
   }
 
+  // Function to edit a pet
   function editPet(pet) {
     const petItem = document.querySelector(`.edit-pet[data-id="${pet.id}"]`).parentElement;
     petItem.innerHTML = `
       <input type="hidden" class="pet-id" value="${pet.id}">
       <label>Nome:</label>
       <input type="text" class="pet-name" value="${pet.nome}">
-      <label>Espécie:</label>
+      <label>Raça:</label>
       <input type="text" class="pet-species" value="${pet.raca}">
       <label>Tamanho:</label>
       <input type="text" class="pet-size" value="${pet.tamanho}">
@@ -59,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <input type="number" class="pet-age" value="${pet.idade}">
       <label>Sexo:</label>
       <input type="text" class="pet-sex" value="${pet.sexo}">
-      <label>Estado de saúde:</label>
+      <label>Estado de Saúde:</label>
       <input type="text" class="pet-health" value="${pet.estadoSaude}">
       <label>Descrição:</label>
       <textarea class="pet-description">${pet.descricao}</textarea>
@@ -69,14 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
       <button class="cancel-edit" data-id="${pet.id}">Cancelar</button>
     `;
 
-    const saveButton = petItem.querySelector(".save-pet");
-    const cancelButton = petItem.querySelector(".cancel-edit");
-
-    saveButton.addEventListener("click", () => savePet(petItem));
-    cancelButton.addEventListener("click", () => displayPets());
+    // Add event listeners for save and cancel buttons
+    petItem.querySelector(".save-pet").addEventListener("click", () => savePet(petItem));
+    petItem.querySelector(".cancel-edit").addEventListener("click", () => displayPets());
   }
 
-  function savePet(petItem) {
+  // Function to save the edited pet details
+  async function savePet(petItem) {
     const id = petItem.querySelector(".pet-id").value;
     const petData = {
       id: id,
@@ -87,17 +91,29 @@ document.addEventListener("DOMContentLoaded", () => {
       sexo: petItem.querySelector(".pet-sex").value,
       estadoSaude: petItem.querySelector(".pet-health").value,
       descricao: petItem.querySelector(".pet-description").value,
-      foto: petItem.querySelector(".pet-photo").value,
+      foto: petItem.querySelector(".pet-photo").value
     };
 
-    console.log("Pet atualizado:", petData);
-    displayPets();
+    try {
+      // Send updated pet data to the API
+      await api.put(`/pets/${id}`, { data: petData });
+      displayPets();
+    } catch (error) {
+      console.error("Erro ao editar pet:", error);
+    }
   }
 
-  function deletePet(id) {
-    console.log("Pet excluído com ID:", id);
-    displayPets();
+  // Function to delete a pet
+  async function deletePet(id) {
+    try {
+      // Send delete request to the API
+      await api.delete(`/pets/${id}`);
+      displayPets();
+    } catch (error) {
+      console.error("Erro ao excluir pet:", error);
+    }
   }
 
+  // Initial call to display pets
   displayPets();
 });

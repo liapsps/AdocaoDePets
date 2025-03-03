@@ -2,19 +2,19 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulário de Adoção - PetLar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="../css/formulario_adocao.css" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?
+family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../js/axiosConfig.js"></script>
-    <script src="../js/auth.js" defer></script>
-    <script src="../js/formulario_adocao.js" defer></script>
+    <script type="module" src="../js/axiosConfig.js"></script>
+    <script type="module" src="../js/formulario_adocao.js" defer></script>
   </head>
   <body>
     <header>
@@ -34,61 +34,41 @@
         </button>
       </nav>
     </header>
-
     <main>
-      <section id="adocao">
-        <h2>Formulário de Adoção</h2>
-        <form id="formAdocao" method="post">
+      <section id="form-adocao">
+        <h1>Solicitação de Adoção</h1>
+        <form id="adocaoForm">
           <div class="form-group">
-            <label for="nome">Nome Completo</label>
-            <input type="text" id="nome" name="nome" required />
+            <label for="nomeUsuario">Adotante:</label>
+            <input type="text" id="nomeUsuario" name="nomeUsuario" readonly />
           </div>
           <div class="form-group">
-            <label for="idade">Idade</label>
-            <input type="number" id="idade" name="idade" required />
+            <label for="nomePet">Nome do Pet:</label>
+            <input type="text" id="nomePet" name="nomePet" readonly />
           </div>
           <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required />
+            <label for="racaPet">Raça do Pet:</label>
+            <input type="text" id="racaPet" name="racaPet" readonly />
           </div>
           <div class="form-group">
-            <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" required />
+            <label for="tamanhoPet">Tamanho do Pet:</label>
+            <input type="text" id="tamanhoPet" name="tamanhoPet" readonly />
           </div>
           <div class="form-group">
-            <label for="endereco">Endereço</label>
-            <input type="text" id="endereco" name="endereco" required />
-          </div>
-          <div class="form-group">
-            <label for="pet">Pet que deseja adotar</label>
-            <select id="pet" name="pet" required>
-              <option value="">Selecione</option>
-              <option value="cachorro">Cachorro</option>
-              <option value="gato">Gato</option>
-              <option value="outro">Outro</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="mensagem">Por que você deseja adotar?</label>
+            <label for="justificativa">Justificativa para Adotar:</label>
             <textarea
-              id="mensagem"
-              name="mensagem"
+              id="justificativa"
+              name="justificativa"
               rows="4"
               required
             ></textarea>
           </div>
-          <button type="submit" class="button_enviar">
-            Enviar Solicitação
-          </button>
-          <div
-            id="mensagem-status"
-            class="mensagem"
-            style="display: none"
-          ></div>
+          <input type="hidden" id="userId" name="userId" />
+          <input type="hidden" id="petId" name="petId" />
+          <button type="submit">Enviar Solicitação</button>
         </form>
       </section>
     </main>
-
     <footer>
       <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
       <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>

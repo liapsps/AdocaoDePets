@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="../css/lista_pets.css" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../js/axiosConfig.js"></script>
-    <script src="../js/auth.js" defer></script>
-    <script src="../js/lista_pets.js" defer></script>
+    <script type="module" src="../js/axiosConfig.js"></script>
+    <script type="module" src="../js/lista_pets.js" defer></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?
+family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -37,34 +37,31 @@
     <main>
       <section id="pets">
         <h2>Pets Disponíveis</h2>
-
         <!-- Filtros -->
         <div id="filters">
-          <label for="filter-name">Nome:</label>
-          <select id="filter-name">
-            <option value="">Todos</option>
+          <!-- Filtro de Categoria -->
+          <label for="filter-category">Categoria:</label>
+          <select id="filter-category">
+            <option value="">Todas</option>
           </select>
-
-          <label for="filter-species">Espécie:</label>
+          <!-- Filtro de Raça -->
+          <label for="filter-species">Raça:</label>
           <select id="filter-species">
             <option value="">Todas</option>
           </select>
-
+          <!-- Filtro de Tamanho -->
           <label for="filter-size">Tamanho:</label>
           <select id="filter-size">
             <option value="">Todos</option>
           </select>
-
           <button id="filter-search">Buscar</button>
           <button id="filter-clear">Limpar</button>
         </div>
-
         <div class="pet-grid">
           <!-- Os pets serão exibidos aqui -->
         </div>
       </section>
     </main>
-
     <footer>
       <p>&copy; 2025 PetLar. Todos os direitos reservados.</p>
       <p><a href="mailto:contato@petlar.com">contato@petlar.com</a></p>

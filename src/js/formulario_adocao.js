@@ -1,81 +1,66 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Verificar se o usuário está logado
-  function checkUserAccess() {
-    const token = localStorage.getItem("jwt");
-
-    if (!token) {
-      window.location.href = "../pages/entrar.html";
-      return false;
-    }
-    return true;
-  }
-
-  // Verificar permissões ao carregar a página
-  if (!checkUserAccess()) return;
-
-  const formAdocao = document.getElementById("formAdocao");
-  const mensagemDiv = document.getElementById("mensagem-status");
-
-  formAdocao.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    try {
-      // Obter os campos do formulário
-      const nome = document.getElementById("nome").value;
-      const idade = document.getElementById("idade").value;
-      const email = document.getElementById("email").value;
-      const telefone = document.getElementById("telefone").value;
-      const endereco = document.getElementById("endereco").value;
-      const pet = document.getElementById("pet").value;
-      const mensagem = document.getElementById("mensagem").value;
-
-      // Dados do usuário logado
-      const userData = JSON.parse(localStorage.getItem("user") || "{}");
-
-      // Preparar os dados para envio
-      const adocaoData = {
-        email: email,
-        endereco: endereco,
-        idade: parseInt(idade),
-        porqueadotar: mensagem,
-        nomecompleto: nome,
-        telefone: telefone,
-        user: userData.id, // Relaciona com o usuário logado
-      };
-
-      // Enviar dados para a API Strapi
-      const response = await api.post(
-        "/api/solicitacao-de-adocaos", {
-          data: adocaoData
-        }
-        
-      );
-
-      // Limpar o formulário e mostrar mensagem de sucesso
-      formAdocao.reset();
-      mostrarMensagem(
-        "Solicitação de adoção enviada com sucesso! Entraremos em contato.",
-        "sucesso"
-      );
-
-      // Redirecionar após 3 segundos
-      setTimeout(() => {
-        window.location.href = "../pages/home.html";
-      }, 3000);
-    } catch (error) {
-      console.error("Erro ao enviar solicitação de adoção:", error);
-      mostrarMensagem(`Erro ao enviar solicitação: ${error.message}`, "erro");
-    }
-  });
-
-  function mostrarMensagem(texto, tipo) {
-    mensagemDiv.textContent = texto;
-    mensagemDiv.className = `mensagem ${tipo}`;
-    mensagemDiv.style.display = "block";
-
-    // Esconder a mensagem após 5 segundos
-    setTimeout(() => {
-      mensagemDiv.style.display = "none";
-    }, 5000);
-  }
+import api from './axiosConfig.js';
+document.addEventListener('DOMContentLoaded', async () => {
+const adocaoForm = document.getElementById('adocaoForm');
+const nomeUsuarioInput = document.getElementById('nomeUsuario');
+const nomePetInput = document.getElementById('nomePet');
+const racaPetInput = document.getElementById('racaPet');
+const tamanhoPetInput = document.getElementById('tamanhoPet');
+const justificativaTextarea = document.getElementById('justificativa');
+const token = localStorage.getItem('jwt');
+const userId = localStorage.getItem('id');
+const userName = localStorage.getItem('nomeCompleto');
+console.log(token)
+if (!token || !userId) {
+alert("Usuário não autenticado. Faça login novamente.");
+window.location.href = "signin.html";
+return;
+}
+const urlParams = new URLSearchParams(window.location.search);
+const petId = urlParams.get('id');
+nomeUsuarioInput.value = userName;
+console.log(petId)
+if (petId) {
+try {
+const res = await api.get(`/pets/${petId}`, {
+headers: {
+Authorization: `Bearer ${token}`
+},
+params: { populate: '*' },
+});
+const pet = res.data.data;
+if (pet) {
+nomePetInput.value = pet.nome || 'Sem nome';
+racaPetInput.value = pet.raca || 'N/A';
+tamanhoPetInput.value = pet.tamanho || 'N/A';
+}
+} catch (error) {
+console.error('Erro ao buscar pet:', error);
+}
+}
+if (adocaoForm) {
+adocaoForm.addEventListener('submit', async (e) => {
+e.preventDefault();
+try {
+const justificativa = justificativaTextarea.value.trim();
+const body = {
+data: {
+adotante: { connect: [userId] },
+pet: { connect: [petId] },
+justificativa: justificativa,
+situacao: 'Pendente',
+},
+}
+const res = await api.post('/solicitacao-de-adocaos', body, {
+headers: {
+Authorization: `Bearer ${token}`,
+},
+});
+alert('Solicitação de adoção enviada com sucesso!');
+window.location.href = 'home.html';
+} catch (error) {
+console.error('Erro ao enviar solicitação:', error);
+alert('Não foi possível enviar a solicitação. Tente novamente.');
+}
+});
+}
 });

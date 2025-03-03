@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const usernameInput = document.getElementById("username");
   const senhaInput = document.getElementById("password");
 
-  if (loginForm) {
+  if (loginForm) { 
     loginForm.addEventListener("submit", async (e) => {
       e.preventDefault();
 
