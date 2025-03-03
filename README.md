@@ -21,6 +21,7 @@ Promover a adoção responsável, aumentar a taxa de adoção e reduzir o abando
 
 ## :people_holding_hands: Papéis ou tipos de usuário da aplicação
 
+- **Usuário Interessado:** Pode visualizar funcionalidades básicas do site, se logar e cadastrar.
 - **Usuário Adotante:** Pode navegar pelo catálogo de animais, registrar interesse em adoção e acessar informações sobre o processo.
 - **Administrador:** Responsável por gerenciar o cadastro de animais, validar interesse de adotantes e monitorar a plataforma.
 
@@ -47,13 +48,11 @@ Promover a adoção responsável, aumentar a taxa de adoção e reduzir o abando
 - HTML
 - CSS
 - JavaScript
-- Axios
 
 **Backend:**
 
 - Node.js
 - Strapi
-- PostgreSQL
 
 ## :shipit: Operações implementadas para cada entidade da aplicação
 
